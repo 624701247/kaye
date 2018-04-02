@@ -1,12 +1,37 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width,initial-scale=1.0">
-    <title>kaye</title>
-  </head>
-  <body>
-    <div id="app"></div>
-    <!-- built files will be auto injected -->
-  </body>
+
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>kaye</title>
+<style>
+  html, body {
+    -ms-touch-action: none;
+    padding: 0;
+    border: 0;
+    margin: 0;
+    height: 100%;
+    background-repeat:  no-repeat;
+    background-size: 100% 100%; 
+    font-family: "Microsoft YaHei" ! important;
+    font-style: normal;
+}
+</style>
+<script>
+  !function () {
+    var cw_rem = 7.5
+    var ch = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight;
+    var cw = Math.min(window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth, ch * 0.64);
+    var ch_rem = ch / cw * cw_rem
+    document.documentElement.style.fontSize = (cw / cw_rem) + 'px';
+  } ()
+</script>
+</head>
+
+<body>
+  <div id="app"></div>
+  <!-- built files will be auto injected -->
+</body>
+
 </html>
