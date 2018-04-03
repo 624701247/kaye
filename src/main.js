@@ -1,5 +1,6 @@
 // The Vue build version to load with the `import` command
 // (runtime-only or standalone) has been set in webpack.base.conf with an alias.
+
 import Vue from 'vue'
 import App from './App'
 import router from './router'
@@ -15,7 +16,6 @@ Vue.config.productionTip = false
   template: '<h1>自定义组件!</h1>'
 })*/
 Vue.component('ToolBar', ToolBar)
-
 
 
 /* eslint-disable no-new */

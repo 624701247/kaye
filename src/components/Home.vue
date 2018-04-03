@@ -3,7 +3,6 @@
     {{msg}}
     <button v-on:click="reverseMsg">逆转消息</button>
     <Hint></Hint>
-    <runoob></runoob>
 </div>
 </template>
 
