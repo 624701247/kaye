@@ -3,6 +3,10 @@
     {{msg}}
     <button v-on:click="reverseMsg">逆转消息</button>
     <Hint></Hint>
+
+    <div style="width:2rem; height:1.5rem; background:red; ">
+        <button style="width:100%; height:100%; background:rgba(13,13,13,.2); margin:0; padding:0;border:0;" >1</button>
+    </div>
 </div>
 </template>
 
