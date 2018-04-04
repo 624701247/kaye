@@ -50,7 +50,10 @@ module.exports = {
     // Paths
     assetsRoot: path.resolve(__dirname, '../dist'),
     assetsSubDirectory: 'static',
-    assetsPublicPath: '/',
+
+    // kone point: 修改打包出来的引入 app.js、app.css 那些的相对路径
+    // assetsPublicPath: '/',  //  根路径
+    assetsPublicPath: './',    //  当前路径   
 
     /**
      * Source Maps

@@ -8,9 +8,9 @@
 
 <script>
 import Vue from 'vue'
+
+
 import Hint from '@/components/Hint'
-// 注册全局组件。 任何地方都能使用  <Hint>
-// Vue.component('Hint', Hint)
 
 export default {
     name: 'Home',
@@ -25,7 +25,7 @@ export default {
         }
     },
     components: {
-        //注册局部组件。 <Hint> 将只在父模板可用
+        //kone point:  注册局部组件。 <Hint> 将只在父模板可用
         'Hint': Hint
     }
 }

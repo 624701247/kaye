@@ -10,8 +10,7 @@ import ToolBar from '@/components/widget/ToolBar'
 
 Vue.config.productionTip = false
 
-
-// 注册全局组件。 任何地方都能使用 
+//kone point: 注册全局组件。 任何地方都能使用 
 /*Vue.component('runoob', {
   template: '<h1>自定义组件!</h1>'
 })*/

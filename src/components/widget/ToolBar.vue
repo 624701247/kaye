@@ -9,6 +9,7 @@
         <span class="name"></span>
     </div>
 
+    <!-- kone point: 控制显示隐藏标签 -->
     <div v-if="!isLogin" class="pn-nologin">
         <ul>
             <li>{{txt.login}}</li>

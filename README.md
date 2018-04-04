@@ -2,6 +2,8 @@
 
 > A Vue.js prj  learn
 
+> 查看知识点请搜索 kone point
+
 ## Build Setup
 
 ``` bash
@@ -9,6 +11,7 @@
 npm install
 
 # serve with hot reload at localhost:8080
+#### 开发运行
 npm run dev
 
 # build for production with minification

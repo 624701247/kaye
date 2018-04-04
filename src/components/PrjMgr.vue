@@ -7,7 +7,8 @@
             <div class="top">
                 <button v-on:click="onClickRefresh">刷新</button>
             </div>
-            <iframe v-bind:src="prjUrl" id="if_s" align="center" width="620" height="1000" marginwidth="0" marginheight="0"></iframe>
+            <iframe ref="ifr" v-bind:src="prjUrl"
+            align="center" width="620" height="1000" marginwidth="0" marginheight="0"></iframe>
         </div>
         <!--frameborder="no" border="0"-->
 
@@ -29,10 +30,13 @@ export default {
     },
     methods: {
         onClickRefresh: function() {
-            // console.log('sss')
             var time = carry.randomInt(0,10000)
-            
-            prjUrl = prjUrl
+            var regObj = new RegExp("(v=).+[0-9]*", "g") 
+            this.prjUrl = this.prjUrl.replace(regObj, 'v=' + time)
+
+            //kone point:  vue操作dom 
+            console.log(this.$refs.ifr.src)
+            // this.$refs.ifr.contentWindow.location.reload(true);
         }
     },
     components: {
