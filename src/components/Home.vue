@@ -10,6 +10,7 @@
 
     <button v-on:click="onClickUpdatePrj">update prj</button>
     <button v-on:click="onClickAddPrj">add prj</button>
+    <button v-on:click="onClickGetPrjList">get prj list</button>
 </div>
 </template>
 
@@ -38,6 +39,11 @@ export default {
             })
         }
         ,onClickAddPrj: function() {
+        }
+        ,onClickGetPrjList: function() {
+            net.getPrjList(function() {
+                
+            })
         }
     },
     components: {

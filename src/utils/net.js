@@ -43,12 +43,12 @@ function post(action, dat, func) {
         }.bind(this))
 }
 
-/*
-function get() {
-    axios.get(baseUrl + '/prj_info_update', {
-    params: {
-      prjName: 'asd'
-    }
+/**/
+function get(action, dat, func) {
+    axios.get(baseUrl, {
+        a: action,
+        t: getTimestamp(),
+        d: dat
   })
   .then(function (response) {
     console.log(response);
@@ -57,12 +57,17 @@ function get() {
     console.log(error);
   });
 }
-*/
+
 
 function updatePrjInfo(prjName, func) {
     post('prj_update', {prjName:prjName}, func)
 }
 
+function getPrjList(func) {
+    get('prj_get_list', null, func)
+}
+
 export default {
     updatePrjInfo
+    ,getPrjList
 }
