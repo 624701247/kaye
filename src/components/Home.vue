@@ -7,6 +7,9 @@
     <div style="width:2rem; height:1.5rem; background:red; ">
         <button style="width:100%; height:100%; background:rgba(13,13,13,.2); margin:0; padding:0;border:0;" >1</button>
     </div>
+
+    <button v-on:click="onClickUpdatePrj">update prj</button>
+    <button v-on:click="onClickAddPrj">add prj</button>
 </div>
 </template>
 
@@ -15,6 +18,8 @@ import Vue from 'vue'
 
 
 import Hint from '@/components/Hint'
+import net from '@/utils/net'
+// import a from '@/utils/a'
 
 export default {
     name: 'Home',
@@ -26,6 +31,13 @@ export default {
     methods: {
         reverseMsg: function () {
             this.msg = this.msg.split('').reverse().join('')
+        }
+        ,onClickUpdatePrj: function() {
+            net.updatePrjInfo('blue', function(data) {
+                console.log(data)
+            })
+        }
+        ,onClickAddPrj: function() {
         }
     },
     components: {
