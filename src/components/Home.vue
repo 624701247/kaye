@@ -41,8 +41,8 @@ export default {
         ,onClickAddPrj: function() {
         }
         ,onClickGetPrjList: function() {
-            net.getPrjList(function() {
-                
+            net.getPrjList(function(data) {
+                console.log(data)
             })
         }
     },

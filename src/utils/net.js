@@ -43,15 +43,19 @@ function post(action, dat, func) {
         }.bind(this))
 }
 
+
 /**/
 function get(action, dat, func) {
     axios.get(baseUrl, {
-        a: action,
-        t: getTimestamp(),
-        d: dat
+        params: {
+            a: action,
+            t: getTimestamp(),
+            d: dat
+        },
+        headers: { 'Content-Type': 'application/json;charset=UTF-8'}
   })
   .then(function (response) {
-    console.log(response);
+    func(response.data)
   })
   .catch(function (error) {
     console.log(error);
