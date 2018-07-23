@@ -18,7 +18,9 @@
             <div class="top">
                 <button v-on:click="onClickRefresh">刷新</button>
             </div>
-            <!-- kone point:  v-bind 为标签绑定属性 -->
+            <!-- kone point:  
+            v-bind 为标签绑定属性。
+            另还有简写方式，例如 v-bind:click 等价于 @click  -->
             <iframe ref="ifr" v-bind:src="prjUrl" align="center" width="620" height="1000" marginwidth="0" marginheight="0"></iframe>
             <!--frameborder="no" border="0"-->
         </div>

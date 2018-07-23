@@ -2,6 +2,8 @@
 <div class="page-home">
     {{msg}}
     <button v-on:click="reverseMsg">逆转消息</button>
+
+    <button v-on:click="goHelloPage">跳转路由</button>
     <Hint></Hint>
 
     <div style="width:2rem; height:1.5rem; background:red; ">
@@ -16,8 +18,7 @@
 
 <script>
 import Vue from 'vue'
-
-
+import router from "@/router";
 import Hint from '@/components/Hint'
 import net from '@/utils/net'
 // import a from '@/utils/a'
@@ -30,7 +31,17 @@ export default {
         }
     },
     methods: {
-        reverseMsg: function () {
+        goHelloPage: function() {
+            // kone point : 跳转路由，编程式
+            // router.push({ name: "HelloWorld"}); 
+            router.push({ 
+                // path: "helloWorld",   //链接路径
+                name: "HelloWorld", //参数name对应 router/index.js 路由表中的name字段
+                params: { userId: 123 },
+                query: { plan: 'private' }   // 带查询参数，变成 /xxx?plan=private
+            });
+        }
+        ,reverseMsg: function () {
             this.msg = this.msg.split('').reverse().join('')
         }
         ,onClickUpdatePrj: function() {

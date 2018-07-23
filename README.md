@@ -4,6 +4,39 @@
 
 > 查看知识点请搜索 kone point
 
+##用 vue-cli 搭建 vue项目
+ 
+1. npm install --global vue-cli
+2. 创建vue项目： vue init webpack vuetest  （会有各种配置选项让你录入）
+搞定！
+
+##vue整合less
+1. 安装  less  和 less-loader
+npm install less less-loader --save-dev
+
+2. webpack.dev.conf.js 添加下规则配置
+
+		module: {
+			rules: utils.styleLoaders({ sourceMap: config.dev.cssSourceMap })
+		},
+
+
+3. vsCode (egret的wing)  装个插件使其识别这样的语法
+插件 ： vetur
+然后在user setting 添加：
+
+		"files.associations": {
+			"*.vue": "vue"
+		}
+
+
+
+
+
+
+
+
+
 ## Build Setup
 
 ``` bash
