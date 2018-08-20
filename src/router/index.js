@@ -1,7 +1,8 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import HelloWorld from '@/components/HelloWorld'
-import Home from '@/components/Home'
+import HomePage from '@/components/HomePage'
+import Test from '@/components/Test'
 import PrjMgr from '@/components/PrjMgr'
 
 Vue.use(Router)
@@ -9,14 +10,19 @@ Vue.use(Router)
 export default new Router({
   routes: [
     {
+      path: '/',
+      name: 'HomePage', // name字段用于：  router.push({ name: "HelloWorld"}); 
+      component: HomePage
+    },
+    {
       path: '/helloWorld',
       name: 'HelloWorld',
       component: HelloWorld
     }
     ,{
-      path: '/',
-      name: 'Home',
-      component: Home
+      path: '/test',
+      name: 'Test',
+      component: Test
     }
     ,{
       path: '/prj-mgr',

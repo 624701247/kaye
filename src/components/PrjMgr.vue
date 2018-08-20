@@ -30,8 +30,8 @@
 
 <script>
 import Vue from 'vue'
-import ToolBar from '@/components/widget/ToolBar'
-import TabBtn from '@/components/widget/TabBtn'
+import ToolBar from '@/components/ToolBar'
+import TabBtn from '@/components/TabBtn'
 
 export default {
     name: 'PrjMgr',

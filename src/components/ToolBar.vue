@@ -44,7 +44,7 @@ export default {
 
 
 <style scoped lang="less" rel="stylesheet/less">
-@import "../../css/global.less";
+@import "../css/global.less";
 @clr:rgba(13,13,13,0.6);
 .widget-toolbar {
     width: 7.5rem;

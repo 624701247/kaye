@@ -29,7 +29,7 @@ export default {
 
 
 <style scoped lang="less" rel="stylesheet/less">
-@import "../../css/global.less";
+@import "../css/global.less";
 .tabBtn {
     background: orange;
     border: 0;

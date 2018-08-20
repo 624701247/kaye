@@ -6,7 +6,7 @@ import App from './App'
 import router from './router'
 
 // widget
-import ToolBar from '@/components/widget/ToolBar'
+import ToolBar from '@/components/ToolBar'
 
 Vue.config.productionTip = false
 
@@ -24,3 +24,5 @@ new Vue({
   components: { App },
   template: '<App/>'
 })
+
+

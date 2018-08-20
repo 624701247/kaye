@@ -1,12 +1,23 @@
+//  kone point :;
+// 全局的，通用的一些样式宏定义写在这里
+// 全局样式写在 app.vue 里面
+
+
 @g_ver:'?220';
 
 @g_cwrem:7.5rem;
 
-// //字体大小 
+//字体大小 
 // @g_f1: 0.3rem;
 
-// // 背景色
+// 背景色
 // @g_clr_1:#131313;
+
+
+@z-page: 2; //页面
+@z-dlg:3; //对话框
+@z-spinner:4; //菊花
+@z-weakhint:5; //若提示
 
 
 // div设置背景图片，自适应图片尺寸
@@ -20,11 +31,4 @@
 
     width: 1rem * @wid / 100;
     height: 1rem * @hei / 100;
-}
-
-.btn {
-    overflow: hidden;
-    white-space: nowrap;
-    text-overflow: ellipsis;
-    display: block;
 }

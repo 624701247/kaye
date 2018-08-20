@@ -13,8 +13,10 @@ module.exports = {
     proxyTable: {},
 
     // Various Dev Server settings
+    //   kone point : 这里修改开发运行的url
     host: 'localhost', // can be overwritten by process.env.HOST
     port: 8080, // can be overwritten by process.env.PORT, if port is in use, a free one will be determined
+
     autoOpenBrowser: false,
     errorOverlay: true,
     notifyOnErrors: true,
@@ -23,7 +25,7 @@ module.exports = {
     // Use Eslint Loader?
     // If true, your code will be linted during bundling and
     // linting errors and warnings will be shown in the console.
-    useEslint: true,
+    useEslint: false, //  kone point 是否开启 eslint 规范
     // If true, eslint errors and warnings will also be shown in the error overlay
     // in the browser.
     showEslintErrorsInOverlay: false,
@@ -77,3 +79,23 @@ module.exports = {
     bundleAnalyzerReport: process.env.npm_config_report
   }
 }
+
+// 项目配置的知识点在这里
+
+
+/*
+// kone point ： 将vue两个单位的缩进改成宽度为4的 tab
+
+本来项目根目录下有如下配置文件  .editorconfig。 实在搞不懂怎么设置，我直接删除了，搞定！tab设置变回按照ide的设置为准了。
+root = true
+
+[*]
+charset = utf-8
+indent_style = space
+indent_size = 2
+end_of_line = lf
+insert_final_newline = true
+trim_trailing_whitespace = true
+
+*/
+
