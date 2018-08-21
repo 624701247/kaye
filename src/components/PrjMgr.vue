@@ -18,9 +18,6 @@
             <div class="top">
                 <button v-on:click="onClickRefresh">刷新</button>
             </div>
-            <!-- kone point:  
-            v-bind 为标签绑定属性。
-            另还有简写方式，例如 v-bind:click 等价于 @click  -->
             <iframe ref="ifr" v-bind:src="prjUrl" align="center" width="620" height="1000" marginwidth="0" marginheight="0"></iframe>
             <!--frameborder="no" border="0"-->
         </div>
@@ -30,7 +27,6 @@
 
 <script>
 import Vue from 'vue'
-import ToolBar from '@/components/ToolBar'
 import TabBtn from '@/components/TabBtn'
 
 export default {
@@ -53,8 +49,7 @@ export default {
         }
     },
     components: {
-        'TabBtn': TabBtn,
-        'ToolBar': ToolBar
+        TabBtn
     }
 }
 </script>

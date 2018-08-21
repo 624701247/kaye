@@ -1,13 +1,21 @@
 <template>
 	<div id="app">
 		<router-view/>
+		<RuleDlg v-show="ruleVisible"/>
 	</div>
 </template>
 
 <script>
 // import 'css/index.less' //?? 不行哦
+import store from './store'
+
 export default {
-	name: 'App'
+	name: 'App',
+	data: function() {
+		return store.appState
+	},
+	methods: {
+	}
 }
 </script>
 
@@ -20,28 +28,29 @@ export default {
 	-moz-osx-font-smoothing: grayscale;
 	text-align: center;
 	color: #2c3e50;
+	width:100%;
 	height: 100%;
-	width:100%;
-
-	// width: 7.5rem;
-	width:100%;
 	position: absolute;
 	left: 0;
 	right: 0;
 	margin: auto;
 	background: #8204b5;
 }
-
 .page {
 	position: absolute;
 	z-index: @z-page;
 	width:100%;
 	height: 100%;
-	background: #ffffff;
+	// background: #ffffff;
 }
 
 .dlg {
-
+	position: fixed;
+	z-index:@z-dlg;
+	width:100%;
+	height:100%;
+	background: rgba(0,0,0,0.5);
+	display: flex;
 }
 
 .spinner {

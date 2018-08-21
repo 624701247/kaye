@@ -9,7 +9,10 @@
         <span class="name"></span>
     </div>
 
-    <!-- kone point: 控制显示隐藏标签 -->
+    <!-- kone point: 控制显示隐藏标签 
+    方法1： v-if="false"
+    方法2： v-show="false"
+    -->
     <div v-if="!isLogin" class="pn-nologin">
         <ul>
             <li>{{txt.login}}</li>
@@ -35,6 +38,9 @@ export default {
         }
     },
     methods: {
+        test: function() {
+            console.log('test')
+        }
     },
     components: {
     }

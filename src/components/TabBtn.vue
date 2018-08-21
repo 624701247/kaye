@@ -9,7 +9,7 @@
 import Vue from 'vue'
 
 export default {
-    name: 'ToolBar',
+    name: 'TabBtn',
     // props: [ 'text', 'isActive' ],  //kone point: 传递参数给组件
     props: {   // kone point : vue 代码规范
         text: String, 

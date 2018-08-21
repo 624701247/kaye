@@ -32,14 +32,18 @@ export default {
 	},
 	methods: {
 		goHelloPage: function() {
-			// kone point : 跳转路由，编程式
-			// router.push({ name: "HelloWorld"}); 
+			/* kone point : 跳转路由，编程式: */ 
 			router.push({ 
-				// path: "helloWorld",   //链接路径
-				name: "HelloWorld", //参数name对应 router/index.js 路由表中的name字段
-				params: { userId: 123 },
+				name: "HomePage-id",
+				// path: "home",   //或者使用链接路径
+				params: {id: 88},
 				query: { plan: 'private' }   // 带查询参数，变成 /xxx?plan=private
-			});
+			}); 
+
+			console.log('历史页数量', window.history.length)		
+		 	//使用 this.$router 就可以不 import router 了。
+	 		// this.$router.go(-1) //返回上一页
+	 		// this.$router.push('/home/22')  跳转页面
 		}
 		,reverseMsg: function () {
 			this.msg = this.msg.split('').reverse().join('')
