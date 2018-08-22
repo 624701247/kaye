@@ -4,6 +4,40 @@
 
 const path = require('path')
 
+var curTimestamp = null
+var getTimestampForamt = function() {
+    if(curTimestamp) {
+        return curTimestamp
+    }
+
+    var date = new Date();
+    var seperator1 = "-";
+    // var year = date.getFullYear();
+    var month = date.getMonth() + 1
+    var strDate = date.getDate()
+    var hour = date.getHours()
+    var minutes = date.getMinutes()
+    // var sec = date.getSeconds()
+
+
+    if (month >= 1 && month <= 9) {
+        month = "0" + month;
+    }
+    if (strDate >= 0 && strDate <= 9) {
+        strDate = "0" + strDate;
+    }
+    if (hour >= 0 && hour <= 9) {
+        hour = "0" + hour;
+    }
+    if (minutes >= 0 && minutes <= 9) {
+        minutes = "0" + minutes;
+    }
+    // var currentdate = year + seperator1 + month + seperator1 + strDate;
+    var currentdate = month + '-' + strDate + '--' + hour + '-' + minutes
+    curTimestamp = currentdate
+    return currentdate;
+}
+
 module.exports = {
     dev: {
         // Paths
@@ -48,9 +82,13 @@ module.exports = {
     build: {
         // Template for index.html
         // 将 __dirname 项目根目录下的index.html 作为 打包的index.html模板
+        // kone point: 这里我把打包目录加上了时间戳
+        // index: path.resolve(__dirname, '../dist/' + getTimestampForamt() + '/index.html'), 
         index: path.resolve(__dirname, '../dist/index.html'), 
 
+
         // Paths
+        // assetsRoot: path.resolve(__dirname, '../dist' + getTimestampForamt()),
         assetsRoot: path.resolve(__dirname, '../dist'),
         assetsSubDirectory: 'static',
 
