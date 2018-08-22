@@ -59,8 +59,13 @@ module.exports = {
         test: /\.(png|jpe?g|gif|svg)(\?.*)?$/,
         loader: 'url-loader',
         options: {
-          limit: 10000,
-          name: utils.assetsPath('img/[name].[hash:7].[ext]')
+
+          // kone point  webpack 打包的图片处理:
+          // 图片大小限制 单位b, 小于 limit 则将图片转化为base64打包出去。
+          // limit: 10000, //默认值
+          limit: 10,
+          // name: utils.assetsPath('img/[name].[hash:7].[ext]')  //资源改名，带上hash后缀 。
+          name: utils.assetsPath('img/[name].[ext]') //资源不改名
         }
       },
       {

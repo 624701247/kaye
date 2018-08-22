@@ -36,12 +36,12 @@ new Vue({
 })
 
 
-var img = new Image()
-img.onload = function() {
-	console.log('loaded')
-}
-img.src = '../static/bg_l.png'	
-console.log('main init')
+// var img = new Image()
+// img.onload = function() {
+// 	console.log('loaded')
+// }
+// img.src = '../static/bg_l.png'	
+// console.log('main init')
 
 
 
