@@ -83,13 +83,13 @@ module.exports = {
         // Template for index.html
         // 将 __dirname 项目根目录下的index.html 作为 打包的index.html模板
         // kone point: 这里我把打包目录加上了时间戳
-        index: path.resolve(__dirname, '../dist/' + getTimestampForamt() + '/index.html'), 
-        // index: path.resolve(__dirname, '../dist/index.html'), 
+        // index: path.resolve(__dirname, '../dist/' + getTimestampForamt() + '/index.html'), 
+        index: path.resolve(__dirname, '../dist/index.html'), 
 
 
         // Paths
-        assetsRoot: path.resolve(__dirname, '../dist' + getTimestampForamt()),
-        // assetsRoot: path.resolve(__dirname, '../dist'),
+        // assetsRoot: path.resolve(__dirname, '../dist' + getTimestampForamt()),
+        assetsRoot: path.resolve(__dirname, '../dist'),
         assetsSubDirectory: 'static',
 
         // kone point: 打包出来的index.html文件内的引入的 css, js 的路径前缀

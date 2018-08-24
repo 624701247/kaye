@@ -1,4 +1,4 @@
-
+var BIN_VER;
 var carry = {}
 
 // utils
@@ -148,8 +148,7 @@ var carry = {}
                 var img = new Image();
                 img.onload = onLoad
                 img.onerror = onerror
-                // img.src = "../assets/" + imgAry[idx] + '?' + 1;
-                img.src = imgAry[idx]
+                img.src = "./static/img/" + imgAry[idx] + '?' + BIN_VER;
             }
         }
 }(carry)

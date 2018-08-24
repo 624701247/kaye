@@ -4,6 +4,8 @@ const utils = require('./utils')
 const config = require('../config')
 const vueLoaderConfig = require('./vue-loader.conf')
 
+const buildLog = require('./buildLog')
+
 function resolve (dir) {
   return path.join(__dirname, '..', dir)
 }
@@ -19,8 +21,6 @@ const createLintingRule = () => ({
     emitWarning: !config.dev.showEslintErrorsInOverlay
   }
 })
-
-
 
 module.exports = {
   context: path.resolve(__dirname, '../'),
@@ -64,8 +64,19 @@ module.exports = {
           // 图片大小限制 单位b, 小于 limit 则将图片转化为base64打包出去。
           // limit: 10000, //默认值
           limit: 10,
-          // name: utils.assetsPath('img/[name].[hash:7].[ext]')  //资源改名，带上hash后缀 。
-          name: utils.assetsPath('img/[name].[ext]') //资源不改名
+
+          // 不加 name值 默认输出的是  /ae3ce3a7050b3fe0a91a5431dd1c13bb.png  一段不知道什么鬼
+          // name: utils.assetsPath('img/[name].[hash:7].[ext]')  //默认配置，带上hash后缀 。
+           /*
+            [name] : 资源名
+            [ext] ： 资源文件类型后缀，比如： png 、 jpg
+            [hash:7] ： 哈希值 7 应该是表示7位
+            [path] : 
+           */
+          name: function(file) {
+            // file :  资源的绝对路径，没有带上你在代码中写的 ?xxx
+            return utils.assetsPath('img/[name].[ext]?' + buildLog.resVer)
+          }
         }
       },
       {

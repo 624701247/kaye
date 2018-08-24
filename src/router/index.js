@@ -12,8 +12,8 @@ export default new Router({
   routes: [
     {
       path: '/',
-      name: 'HomePage', // name字段用于：  router.push({ name: "HelloWorld"}); 
-      component: HomePage
+      name: 'LoadingPage', // name字段用于：  router.push({ name: "HelloWorld"}); 
+      component: LoadingPage
     },
     {
       path: '/home/:id',
@@ -25,8 +25,6 @@ export default new Router({
       name: 'LoadingPage',
       component: LoadingPage
     },
-
-
     {
       path: '/helloWorld',
       name: 'HelloWorld',

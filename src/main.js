@@ -36,16 +36,6 @@ new Vue({
 })
 
 
-// var img = new Image()
-// img.onload = function() {
-// 	console.log('loaded')
-// }
-// img.src = '../static/bg_l.png'	
-// console.log('main init')
-
-
-
-
 /* kone point 
 1、
 多个视图依赖于同一状态。
