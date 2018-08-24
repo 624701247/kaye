@@ -82,7 +82,7 @@ module.exports = {
     build: {
         // Template for index.html
         // 将 __dirname 项目根目录下的index.html 作为 打包的index.html模板
-        // kone point: 这里我把打包目录加上了时间戳
+        // kone point: 这里我可以把打包目录加上了时间戳
         // index: path.resolve(__dirname, '../dist/' + getTimestampForamt() + '/index.html'), 
         index: path.resolve(__dirname, '../dist/index.html'), 
 

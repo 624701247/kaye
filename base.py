@@ -22,7 +22,7 @@ def addVer_html(srcFile, newVer):
 			count = count + 1
 			if line.find('var BIN_VER') != -1 and hasAddVer == False:
 				hasAddVer = True
-				content += 'var BIN_VER = "' + newVer + '";\n'
+				content += '		var BIN_VER = "' + newVer + '";\n'
 			else :
 				content += line 
 	# 
@@ -32,19 +32,19 @@ def addVer_html(srcFile, newVer):
 
 
 # 修改 .html 中的 BIN_VER 版本号
-def addVer_buildLog(srcFile, newVer):
-	hasAddVer = False
+def addVer_pyBuildConf(srcFile, newVer, prjTag):
 	count = 0
 	content = ''
 	with open(srcFile,"r",encoding='utf-8') as file:
 		for line in file.readlines():
 			count = count + 1
-			if line.find('resVer') != -1 and hasAddVer == False:
-				hasAddVer = True
+			if line.find('resVer') != -1:
 				content += '	resVer: "' + newVer + '",\n'
+			if line.find('prjTag') != -1:
+				content += '	prjTag: "' + prjTag + '"\n'
 			else :
-				content += line 
-	# 
+				content += line
+	#
 	targetfile = open(srcFile, "w+", encoding='utf-8')
 	targetfile.write(content)
 	targetfile.close()
@@ -100,3 +100,39 @@ def getResVer():
 		minutes = "0" + str(minutes)
 	return (str(month) + str(strDate) + str(hour) + str(minutes))
 
+
+#拷贝或覆盖文件夹
+def copyFolder(srcPath, destPath):
+	for path in os.listdir(srcPath):
+		subSrcPath = os.path.join(srcPath, path)
+		subDestPath = os.path.join(destPath, path)
+		if os.path.isfile(subSrcPath):  
+			coverFile(subSrcPath, subDestPath)
+		else:
+			if os.path.exists(subDestPath):    #删除子目录
+				shutil.rmtree(subDestPath)
+			copyFolder(subSrcPath, mkdir(subDestPath))
+
+
+#拷贝或覆盖单个文件
+def coverFile(srcFilePath, destFliePath):
+	if os.path.exists(destFliePath):
+		os.remove(destFliePath)
+	shutil.copy(srcFilePath, destFliePath)
+
+
+#创建目录结构
+def mkdir(path):
+	isExists = os.path.exists(path)
+	if not isExists:
+		os.makedirs(path) 
+	return path
+
+
+
+# git提交并推送
+def gitPusher(path, log):
+	isSucc = os.chdir(path)
+	os.system('git add .')
+	os.system('git commit -m ' + log)
+	os.system('git push')

@@ -32,7 +32,7 @@ npm install less less-loader --save-dev
 
 ##预加载资源的方案
 1. 请看publish.py，
-2. 请看 build 目录下的 buildLog.js 和 webpack.base.conf.js
+2. 请看 build 目录下的 pyBuildConf.js 和 webpack.base.conf.js
 3. 然后打包出来的全局变量 BIN_VER 就会跟样式文件中的 aa.png?xxxx  保持一致
 ##########   kone todo 请有空继续研究，改成全部用js来写自动化批处理。
 

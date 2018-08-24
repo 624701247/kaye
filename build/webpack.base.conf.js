@@ -4,7 +4,7 @@ const utils = require('./utils')
 const config = require('../config')
 const vueLoaderConfig = require('./vue-loader.conf')
 
-const buildLog = require('./buildLog')
+const pyBuildConf = require('./pyBuildConf')
 
 function resolve (dir) {
   return path.join(__dirname, '..', dir)
@@ -75,7 +75,7 @@ module.exports = {
            */
           name: function(file) {
             // file :  资源的绝对路径，没有带上你在代码中写的 ?xxx
-            return utils.assetsPath('img/[name].[ext]?' + buildLog.resVer)
+            return utils.assetsPath('img/[name].[ext]?' + pyBuildConf.resVer)
           }
         }
       },

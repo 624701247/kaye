@@ -20,12 +20,18 @@ lt = time.localtime(curTime)
 # git 提交日志
 gitLog = verTag + '-' + str(lt.tm_mon) + '月' + str(lt.tm_mday) + '日-' + str(lt.tm_hour) + ':' + str(lt.tm_min) 
 
-
 # 资源版本号， 图片、声音、json等
 resVer = base.getResVer()
-print('resVer' + resVer)
 
-# step :  ############################
+#标识那个版本
+prjTag = '' # 默认,h5版本
+# prjTag = 'App'
+
+print('resVer: ' + resVer)
+print('prjTag: ' + prjTag)
+
+
+# step 1: 改资源版本号   ############################
 ''' '''
 filePath = prjPath + '\\index.html'
 if base.checkHaLet(filePath):
@@ -33,12 +39,12 @@ if base.checkHaLet(filePath):
 	os._exit(0)
 base.addVer_html(filePath, resVer)
 # 
-base.addVer_buildLog(prjPath + '\\build\\buildLog.js', resVer)
+base.addVer_pyBuildConf(prjPath + '\\build\\pyBuildConf.js', resVer, prjTag)
 # 
 # base.addVer_less(prjPath + '\\src\\css\\global.less', resVer)
 
 
-# step : vue 打包  ########################################################
+# step 2: vue 打包  ########################################################
 ''' '''
 dirPath = base.vuePublish()
 if dirPath == '':
@@ -46,7 +52,9 @@ if dirPath == '':
 	os._exit(0)
 
 
+# step 3:  拷贝包到对应git目录上 ########################################################
+base.copyFolder(dirPath, gitPath)
 
-
-
-
+# step 4: 提交git #####################################################################
+# kone warning 小心别覆盖了后端写的代码
+# base.gitPusher(gitPath, 'ver:' + gitLog)

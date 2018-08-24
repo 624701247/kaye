@@ -55,19 +55,7 @@ export default {
 
 
 	/*这样写开发运行没问题，打包出来路径就错了，需要改下配置： build/utils.js  vue-style-loader 哪里加上一句 publicPath: '../../'  */
-
-
-
-
- 	background: #58C3D5 url(../assets/bg_loading.png?234234) center bottom  no-repeat;
-
- 	
-
- 	// background: #58C3D5 url("../assets/bg_loading.png@{g_ver}") center bottom  no-repeat;
- 	
- 	// .divimg("../assets/bg_loading.png");
- 	// background: @clr_bg;
-
-	// background-size: cover;
+ 	background: #58C3D5 url(../assets/bg_loading.png) center bottom  no-repeat;
+	background-size: cover;
 }
 </style>
