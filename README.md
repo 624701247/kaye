@@ -34,11 +34,18 @@ npm install less less-loader --save-dev
 1. 请看publish.py，
 2. 请看 build 目录下的 pyBuildConf.js 和 webpack.base.conf.js
 3. 然后打包出来的全局变量 BIN_VER 就会跟样式文件中的 aa.png?xxxx  保持一致
-##########   kone todo 请有空继续研究，改成全部用js来写自动化批处理。
+##########   kone todo 请有空继续研究，改成全部用js来写自动化批处理。  
 
 
+##单向数据流
+数据从父级组件传递给子组件，只能单向绑定。  
+子组件内部不能直接修改从父级传递过来的数据。
+子组件如何给父组件传递参数:
 
-
+##指令
+绑定属性   v-bind:text、v-bind:src、v-bind:show   缩写 ：text  
+绑定事件   v-on:click  缩写@click  
+循环  v-for
 
 
 

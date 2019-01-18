@@ -10,11 +10,11 @@ import RuleDlg from '@/components/RuleDlg'
 
 Vue.config.productionTip = false
 
-
-//kone point: 注册全局组件。 任何地方都能使用
-/*Vue.component('runoob', {
+/*kone point: 注册全局组件。 任何地方都能使用
+Vue.component('runoob', {
   template: '<h1>自定义组件!</h1>'
 })*/
+
 Vue.component('ToolBar', ToolBar)
 Vue.component('RuleDlg', RuleDlg)
 Vue.component('App', App)
@@ -35,13 +35,9 @@ new Vue({
 	}
 })
 
-
-/* kone point 
+/* kone point
 1、
 多个视图依赖于同一状态。
 来自不同视图的行为需要变更同一状态。
 解决以上两点需求 方案 a : Vuex 、  方案 b : store模式(详细请看 store.js)
-*/ 
-
-
-
+*/
