@@ -12,7 +12,7 @@ export default new Router({
   routes: [
     {
       path: '/',
-      name: 'LoadingPage', // name字段用于：  router.push({ name: "HelloWorld"}); 
+      name: 'LoadingPage', //kone point: name字段用于：  router.push({ name: "HelloWorld"}); 
       component: LoadingPage
     },
     {

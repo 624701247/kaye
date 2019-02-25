@@ -1,7 +1,7 @@
 <template>
 <div class="page page-loading" v-show="visible">
 	<img src="../assets/logo.png" />
-	<img src="../assets/bs_18.jpg" />
+	<img v-bind:src="bs18Url" />
 	<img src="../assets/bg_loading.png" style="width:1rem;height:1rem;" />
 </div>
 </template>
@@ -14,7 +14,13 @@ export default {
 	data () {
 		return {
 			visible:false,
-			isResLoadOk: false
+			isResLoadOk: false,
+
+			/*kone point: 使用 v-bind:src 动态绑定图片url是，需要 require 下资源，
+			或者写成： import bs18Url from '../assets/bs_18.jpg'
+			如果直接   bs18Url: '../assets/bs_18.jpg'   这样是不行的哦，编译出来路径不对哦~！
+			*/ 
+			bs18Url: require('../assets/bs_18.jpg')
 		}
 	},
 	methods: {

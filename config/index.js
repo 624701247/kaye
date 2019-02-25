@@ -49,7 +49,7 @@ module.exports = {
         //   kone point : 这里修改开发运行的url
         host: 'localhost', // can be overwritten by process.env.HOST
         // host: '172.18.11.116',
-        port: 8088, // can be overwritten by process.env.PORT, if port is in use, a free one will be determined
+        port: 2019, // can be overwritten by process.env.PORT, if port is in use, a free one will be determined
 
         autoOpenBrowser: false,
         errorOverlay: true,
