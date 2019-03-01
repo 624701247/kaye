@@ -41,7 +41,10 @@ export default new Router({
         // path: '/helloWorld',   //通过 http://localhost:2019/#/helloWorld/ 访问
         name: 'HelloWorld',
         component: HelloWorld
-        
+      }, {
+        path: '',  // 通过 http://localhost:2019/#/test/ 访问 即覆盖了父层的路由
+        name: 'HelloWorld',
+        component: HelloWorld
       }]
     },
     {

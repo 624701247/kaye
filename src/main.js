@@ -24,6 +24,10 @@ Vue.component('ToolBar', ToolBar)
 Vue.component('RuleDlg', RuleDlg)
 Vue.component('App', App)
 
+
+/*注册全局过滤器*/ 
+Vue.filter('g_capitalize', carry.capitalize)
+
 /* eslint-disable no-new */
 new Vue({
 	el: '#app',
