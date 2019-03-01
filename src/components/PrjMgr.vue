@@ -8,7 +8,7 @@
             <!--<li v-for="var idx = 0; idx < tools.length; idx++">    不能这样写哦 -->  
             <!--<li v-for="tool in tools">-->
             <li v-for="(val, idx) in tools">
-                <TabBtn v-bind:text="idx + val" isActive="true" />
+                <TabBtn :key="idx" v-bind:text="idx + '、' + val" isActive="true" />
             </li>
         </ul>
     </div>
@@ -16,9 +16,9 @@
     <div class="bd">
         <div class="widget-preview">
             <div class="top">
-                <button v-on:click="onClickRefresh">刷新</button>
+                <button v-on:click="ontapRefresh">刷新</button>
             </div>
-            <iframe ref="ifr" v-bind:src="prjUrl" align="center" width="620" height="1000" marginwidth="0" marginheight="0"></iframe>
+            <iframe ref="ifRef" v-bind:src="prjUrl" align="center" width="620" height="1000" marginwidth="0" marginheight="0"></iframe>
             <!--frameborder="no" border="0"-->
         </div>
     </div>
@@ -33,18 +33,19 @@ export default {
     name: 'PrjMgr',
     data () {
         return {
-            prjUrl: "http://www.runoob.com/w3cnote/flex-grammar.html?v=1",
+            prjUrl: 'http://www.baidu.com?v=1',
+            // prjUrl: "http://www.runoob.com/w3cnote/flex-grammar.html?v=1",
             tools: lang.mgrtools
         }
     },
     methods: {
-        onClickRefresh: function() {
+        ontapRefresh: function() {
             var time = carry.randomInt(0,10000)
             var regObj = new RegExp("(v=).+[0-9]*", "g") 
             this.prjUrl = this.prjUrl.replace(regObj, 'v=' + time)
 
             //kone point:  vue操作dom 
-            console.log(this.$refs.ifr.src)
+            console.log(this.$refs.ifRef.src)
             // this.$refs.ifr.contentWindow.location.reload(true);
         }
     },

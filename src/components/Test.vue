@@ -1,5 +1,7 @@
 <template>
 <div class="page page-test">
+	<router-view id="testRouer" style="position: absolute; width: 100%; height:100%; background: #fff;"></router-view>
+
 	{{msg}}
 	<button v-on:click="reverseMsg">逆转消息</button>
 
@@ -12,7 +14,7 @@
 
 	<button v-on:click="onClickUpdatePrj">update prj</button>
 	<button v-on:click="onClickAddPrj">add prj</button>
-	<button v-on:click="onClickGetPrjList">get prj list</button>
+	<button v-on:click="onClickGetPrjList">get prj list</button>	
 </div>
 </template>
 

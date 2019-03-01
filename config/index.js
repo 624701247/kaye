@@ -123,8 +123,7 @@ module.exports = {
 
 /*
 // kone point ： 将vue两个单位的缩进改成宽度为4的 tab
-
-本来项目根目录下有如下配置文件  .editorconfig。 实在搞不懂怎么设置，我直接删除了，搞定！tab设置变回按照ide的设置为准了。
+本来项目根目录下有如下配置文件  .editorconfig  。实在搞不懂怎么设置，我直接删除了，搞定！tab设置变回按照ide的设置为准了。
 root = true
 
 [*]

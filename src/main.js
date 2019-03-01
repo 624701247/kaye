@@ -7,11 +7,12 @@
 // import 'babel-polyfill'  
 
 import Vue from 'vue'
-import App from './App'
-import router from './router'
 
-import ToolBar from '@/components/ToolBar'
-import RuleDlg from '@/components/RuleDlg'
+//   kone point :	@/xx 表示根路径下xx目录；	./xx 表示当前路径下xx目录
+import App from './App'
+import router from './router'   //简写， 相当于  ./router/index.js
+import ToolBar from './components/ToolBar'
+import RuleDlg from '@/components/RuleDlg'  
 
 Vue.config.productionTip = false
 

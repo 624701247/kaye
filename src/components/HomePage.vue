@@ -40,8 +40,7 @@ export default {
 		/*kone point  路由间传递参数：
 		第一步：路由注册哪里是这样的： path: '/home/:id', 
 		第二步：跳转路由带上参数 router.push({ name: "xxx", params: {id: 88} }); 
-		第三步：this.$route.params.id 拿到传过来的数
-		*/ 
+		第三步：this.$route.params.id 拿到传过来的数  */ 
 		console.log('参数/id', this.$route.params.id)
 		console.log('query', this.$route.query)
 	},
