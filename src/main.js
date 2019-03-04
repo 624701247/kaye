@@ -14,6 +14,11 @@ import router from './router'   //简写， 相当于  ./router/index.js
 import ToolBar from './components/ToolBar'
 import RuleDlg from '@/components/RuleDlg'  
 import './es6syntax'
+import * as directives from './advanced/directives'
+
+import moment from 'moment'
+import Mint from 'mint-ui'
+
 
 /*  fundebug : bug监控平台，很叼哦~   https://www.fundebug.com/
 import * as fundebug from "fundebug-javascript";
@@ -22,8 +27,16 @@ fundebug.apikey = "7f6f43db7cd47e5282e31be3b03de5473f5fa8d540e26e98f339e4f6360df
 fundebugVue(fundebug, Vue);
 */
 
+/* moment: JavaScript 日期处理类库 */ 
+// 配置的语言
+moment.locale('zh-cn')
+console.log('当前时间：', moment().format() )   //就是读浏览器时间
+console.log( moment().format('MMMM Do YYYY, h:mm:ss a') )
 
 Vue.config.productionTip = false
+
+/**/ 
+Vue.use(Mint)
 
 /*kone point: 注册全局组件。 任何地方都能使用
 Vue.component('runoob', {
@@ -34,8 +47,18 @@ Vue.component('RuleDlg', RuleDlg)
 Vue.component('App', App)
 
 
-/*注册全局过滤器*/ 
+
+/* 注册全局过滤器 */ 
 Vue.filter('g_capitalize', carry.capitalize)
+
+
+/* kone point : 注册全局指令 
+使用： <input v-focus="{bgClr:'red'}" /> 
+*/ 
+Object.keys(directives).forEach(name => {
+  Vue.directive(name, directives[name])
+})
+
 
 /* eslint-disable no-new */
 new Vue({

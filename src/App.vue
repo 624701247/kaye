@@ -19,6 +19,14 @@ export default {
 }
 </script>
 
+<style src="mint-ui/lib/style.css"></style>
+<style>
+/* 修改 mint-ui  菊花z-index */
+.mint-indicator-wrapper {
+    z-index: 10;
+}
+</style>
+
 <style scoped lang="less" rel="stylesheet/less">
 @import "css/global.less";
 
@@ -35,13 +43,13 @@ export default {
 	right: 0;
 	margin: auto;
 	background: #8204b5;
+	position: relative;
 }
 .page {
 	position: absolute;
 	z-index: @z-page;
 	width:100%;
 	height: 100%;
-	// background: #ffffff;
 }
 
 .dlg {
@@ -54,11 +62,9 @@ export default {
 }
 
 .spinner {
-
 }
 
 .weakhint {
-
 }
 
 .btn {

@@ -17,6 +17,8 @@
     "axios": "^0.18.0",
     "fundebug-javascript": "^1.6.0",
     "fundebug-vue": "0.0.1",
+    "mint-ui": "^2.2.13",
+    "moment": "^2.24.0",
     "vue": "^2.5.2"
   },
   "devDependencies": {
