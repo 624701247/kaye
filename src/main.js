@@ -13,6 +13,15 @@ import App from './App'
 import router from './router'   //简写， 相当于  ./router/index.js
 import ToolBar from './components/ToolBar'
 import RuleDlg from '@/components/RuleDlg'  
+import './es6syntax'
+
+/*  fundebug : bug监控平台，很叼哦~   https://www.fundebug.com/
+import * as fundebug from "fundebug-javascript";
+import fundebugVue from "fundebug-vue";
+fundebug.apikey = "7f6f43db7cd47e5282e31be3b03de5473f5fa8d540e26e98f339e4f6360df436"
+fundebugVue(fundebug, Vue);
+*/
+
 
 Vue.config.productionTip = false
 
@@ -20,7 +29,7 @@ Vue.config.productionTip = false
 Vue.component('runoob', {
   template: '<h1>自定义组件!</h1>'
 })*/
-Vue.component('ToolBar', ToolBar)
+Vue.component(ToolBar.name, ToolBar)
 Vue.component('RuleDlg', RuleDlg)
 Vue.component('App', App)
 
@@ -46,6 +55,8 @@ new Vue({
 
 // kone point : global ：vue 的全局变量，默认是等于 Window
 console.log('global', global)
+// node环境变量（在浏览器控制直接输入查看不了的）
+console.log('NODE_ENV : ', process.env.NODE_ENV)
 
 
 /* kone point : 总览
@@ -85,14 +96,3 @@ console.log('global', global)
 
 */
 
-
-/* kone point : es6*/
-
-/* 箭头函数： */
-var x = () => '箭头函数返回'
-console.log(x())
-/* 相当于
-var x = function() {
-	return '箭头函数返回'
-}
-*/
