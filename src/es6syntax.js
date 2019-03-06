@@ -48,6 +48,21 @@ testResult()
 console.log('计算不阻塞')
 
 
+/**/ 
+function a() {
+    var v1 = 'vvv1'
+    return {v1}
+}
+// 得出结果是  {v1: 'vvv1'} 
+console.log('a', a())
+
+/* 可以跟 ts 一样设置参数默认值 */ 
+var funca = (url = "http://happy") => { 
+    console.log('url', url)
+}
+funca()
+
+
 
 const jinx = {}
 

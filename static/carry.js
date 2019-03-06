@@ -70,7 +70,12 @@ var carry = {}
         }
         value = value.toString()
         return value.charAt(0).toUpperCase() + value.slice(1)
-    }   
+    }  
+
+    //检查字符串中是否还有中文
+    utils.checkHasCH = function(str) {
+        return /[\u4E00-\u9FA5]/.test(str)
+    } 
 } (carry)
 
 

@@ -23,6 +23,7 @@
 <script>
 import Vue from 'vue'
 import store from '../store'
+import net from '../net'
 import { Toast, Indicator  } from 'mint-ui';
 
 export default {
@@ -53,9 +54,10 @@ export default {
 			});
 		},
 		ontapMore() {
-			console.log('sdf')
-			Indicator.open('加载中...');
+			// Indicator.open('加载中...');
 			// Indicator.open();
+
+			net.login()
 		}
 	},
 	created() {
@@ -67,6 +69,12 @@ export default {
 		第三步：this.$route.params.id 拿到传过来的数  */ 
 		this.pid = this.$route.params.id
 		console.log('query', this.$route.query)
+
+
+		// axios.get('http://www.baidu.com')
+		net.login()
+		// net.register()
+		// net.userInfo()
 	},
 	mounted() {
 		console.log('ui渲染之后')
