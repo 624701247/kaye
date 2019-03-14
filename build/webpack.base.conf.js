@@ -36,9 +36,13 @@ module.exports = {
   },
   resolve: {
     extensions: ['.js', '.vue', '.json'],
+    // kone point:  别名配置,指定字符串代表指定路径
     alias: {
       'vue$': 'vue/dist/vue.esm.js',
       '@': resolve('src'),
+
+      /*比如加上这个你就可以项目中任何层级目录下：background: url('~src/assets/bg_loading.png');  */
+      'src': path.resolve(__dirname, '../src'),  
     }
   },
   module: {

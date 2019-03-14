@@ -71,7 +71,7 @@ export default {
 
 
 	/*前缀带~的URL 会被当成模块请求, 类似于require('some-module/image.png'). */
-	background: url('~../assets/bg_loading.png') center bottom  no-repeat;
+	background: url('~src/assets/bg_loading.png') center bottom  no-repeat;
 
 
 
