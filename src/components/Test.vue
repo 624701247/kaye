@@ -34,18 +34,25 @@ export default {
 	},
 	methods: {
 		goHelloPage: function() {
-			/* kone point : 跳转路由，编程式: */ 
+			/* kone point : 跳转路由、路由间传递参数*/ 
+			// this.$router.push()  //或者
 			router.push({ 
 				name: "HomePage-id",
 				// path: "home",   //或者使用链接路径
 				params: {id: 88},
 				query: { plan: 'private' }   // 带查询参数，变成 /xxx?plan=private
 			}); 
-
 			console.log('历史页数量', window.history.length)		
 		 	//使用 this.$router 就可以不 import router 了。
 	 		// this.$router.go(-1) //返回上一页
 	 		// this.$router.push('/home/22')  跳转页面
+	 		// this.$router.go(0)  // 刷新当前页面
+
+	 		/*
+			第一步：路由注册哪里是这样的： path: '/home/:id', 如果是多个参数就这样： '/home/:p1/:p2/:p3'
+			第二步：跳转路由带上参数 this.$router.push({ name: "xxx", params: {id: 88} }); 
+			第三步：this.$route.params.id 拿到传过来的参数  
+			*/ 
 		}
 		,reverseMsg: function () {
 			this.msg = this.msg.split('').reverse().join('')

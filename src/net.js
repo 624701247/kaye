@@ -51,7 +51,7 @@ export default {
             method: 'post',
             url: baseUrl + 'login',
             params: {name: '三'},
-            data: {a:1}
+            data: {a:1, b:2,c:3}
         });
     },
 

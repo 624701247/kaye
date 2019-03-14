@@ -40,6 +40,6 @@ export default {
     color: white;
 }
 .tabBtn-active {
-    background: #CC7229;
+    background: #CC7229;    
 }
 </style>

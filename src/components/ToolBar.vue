@@ -9,7 +9,7 @@
         <span class="name"></span>
     </div>
 
-    <!-- kone point: 控制显示隐藏标签 
+    <!-- kone point: v-if 控制是否渲染该标签
     方法1： v-if="false"
     方法2： v-show="false"
     -->
