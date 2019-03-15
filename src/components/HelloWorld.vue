@@ -1,3 +1,11 @@
+<!-- Add "scoped" attribute to limit CSS to this component only -->
+<style scoped>
+h1, h2 {
+  font-weight: normal;
+  font-size: 30px;
+}
+</style>
+
 <template>
   <div class="hello">
 
@@ -21,14 +29,9 @@ export default {
     如上写法 {{ msg | capitalize }} 作用时将 msg 用 “|” 后面的方法格式化输出  
     注册全局过滤器请看 main.js */
     capitalize: carry.capitalize
-  }
+  },
+  created () {
+  },
+  computed : {}
 }
 </script>
-
-<!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped>
-h1, h2 {
-  font-weight: normal;
-  font-size: 30px;
-}
-</style>

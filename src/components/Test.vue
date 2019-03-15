@@ -14,7 +14,7 @@
 
 	<button v-on:click="onClickUpdatePrj">update prj</button>
 	<button v-on:click="onClickAddPrj">add prj</button>
-	<button v-on:click="onClickGetPrjList">get prj list</button>	
+	<button v-on:click="onClickGetPrjList">get prj list</button>		
 </div>
 </template>
 

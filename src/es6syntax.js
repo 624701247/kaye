@@ -10,6 +10,28 @@ var x = function() {
 }
 */
 
+
+
+/* 箭头函数更骚操作 */ 
+var funck = function(pa) {
+    return function(pb) {
+        console.log('oldFun', pb)
+    }
+}
+funck()('kl')
+// 相当于
+var funcl = (pa) => (pb) => {
+    console.log('newFun', pb)
+}
+funcl()('kl')
+// 相当于
+var funcm = pa => pb => {
+    console.log('newFun22', pb)
+}
+funcm()('kl')
+
+
+
 /*async异步函数，默认返回的是一个 Promise 对象*/ 
 /* async function() {}  */ 
 var timeout = async (flag) => {
@@ -61,6 +83,26 @@ var funca = (url = "http://happy") => {
     console.log('url', url)
 }
 funca()
+
+
+
+
+/* 对象中的扩展运算符(...)用于取出参数对象中的所有可遍历属性，拷贝到当前对象之中 */
+var bar = { a: 1, b: 2 };
+var baz = { ...bar }; 
+console.log(baz)  //打印出： { a: 1, b: 2 }
+// 相当于
+var bar = { a: 1, b: 2 };
+var baz = Object.assign({}, bar); 
+
+var bar = {a: 1, b: 2};
+var baz = {...bar, ...{a:2, b: 4}}; 
+console.log(baz) //打印出： {a: 2, b: 4}  可以很方便的修改对象的部分属性 
+console.log(bar) //打印出： {a: 1, b: 2}
+
+
+
+
 
 
 

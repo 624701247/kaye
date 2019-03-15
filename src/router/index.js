@@ -6,6 +6,8 @@ import HomePage from '@/components/HomePage'
 import LoadingPage from '@/components/LoadingPage'
 import Test from '@/components/Test'
 import PrjMgr from '@/components/PrjMgr'
+import lifecycle from '@/views/lifecycle'
+
 
 Vue.use(Router)
 
@@ -51,6 +53,12 @@ export default new Router({
       path: '/prj-mgr',
       name: 'PrjMgr',
       component: PrjMgr
+    },
+
+    {
+      path: '/lifecycle',
+      name: 'lifecycle',
+      component: lifecycle
     }
   ]
 })

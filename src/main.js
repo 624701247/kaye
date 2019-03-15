@@ -16,6 +16,8 @@ import RuleDlg from '@/components/RuleDlg'
 import './es6syntax'
 import * as directives from './advanced/directives'
 
+import store from './vuexStore'
+
 import moment from 'moment'
 import Mint from 'mint-ui'
 
@@ -64,6 +66,9 @@ Object.keys(directives).forEach(name => {
 new Vue({
 	el: '#app',
 	router,
+	// 把 store 对象提供给 “store” 选项，这可以把 store 的实例注入所有的子组件, 
+	// 注意： 这里名字不能自定义啊，一定要按指定的名字！！！！
+	store,
 	components: { App },
 	template: '<App/>',
 	data: {
