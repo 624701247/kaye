@@ -9,19 +9,32 @@
 		
 		<div>{{count}}</div>
 		<div>{{dCount}}</div>
+
+		<star-evaluate v-model="starCount"></star-evaluate>
 	</div>
 </template>
 
 <script>
+	import StarEvaluate from '@/components/StarEvaluate'
+
+
 	export default {
 		name: 'lifecycle',
+
 		data () {
 			return {
 				a:2,
 				count: this.$store.state.count,
-				dCount: this.$store.getters.dCount
+				dCount: this.$store.getters.dCount,
+
+				starCount: ''
 			}
 		},
+
+		// 
+		components: {
+    		'star-evaluate': StarEvaluate
+  		},
 
 		created () {
 			console.log('aDouble', this.aDouble)
@@ -46,6 +59,12 @@
 				set: function (v) {
 					this.a = v - 1
 				}
+			}
+		},
+
+		watch: {
+			starCount (newval, oldval) {
+				console.log('star count 新旧值', newval, oldval)
 			}
 		}
 	}

@@ -13,15 +13,18 @@ h1, h2 {
     <h1>{{ msg | g_capitalize }}</h1>   <!-- 使用全局过滤器 -->
 
     <h2>Essential Links</h2>
+
   </div>
 </template>
 
 <script>
+
 export default {
   name: 'HelloWorld',
   data () {
     return {
-      msg: 'helloWorld.vue'
+      msg: 'helloWorld.vue',
+      starCount: ''
     }
   },
   filters: { 
