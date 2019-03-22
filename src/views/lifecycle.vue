@@ -10,7 +10,7 @@
 		<div>{{count}}</div>
 		<div>{{dCount}}</div>
 
-		<star-evaluate v-model="starCount"></star-evaluate>
+		<star-evaluate ref="starEv" v-model="starCount"></star-evaluate>
 	</div>
 </template>
 
@@ -36,6 +36,7 @@
     		'star-evaluate': StarEvaluate
   		},
 
+  		// 在实例创建完成后被立即调用
 		created () {
 			console.log('aDouble', this.aDouble)
 			this.aPlus = 100
@@ -43,6 +44,15 @@
 
          	this.a = 22
 
+         	//  undefined 此回调时标签还未就绪
+         	console.log('created starEv', this.$refs.starEv)
+		},
+
+		// el 被新创建的 vm.$el 替换，并挂载到实例上去之后调用该钩子
+		// 如果 root 实例挂载了一个文档内元素，当 mounted 被调用时 vm.$el 也在文档内。
+		mounted () {
+			// 此回调函数后才能访问标签dom
+			console.log('mounted starEv', this.$refs.starEv)
 		},
 
 		// 计算属性: 将被混入到 Vue 实例中。所有 getter 和 setter 的 this 上下文自动地绑定为 Vue 实例。

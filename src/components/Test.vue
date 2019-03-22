@@ -51,8 +51,11 @@ export default {
 	 		/*
 			第一步：路由注册哪里是这样的： path: '/home/:id', 如果是多个参数就这样： '/home/:p1/:p2/:p3'
 			第二步：跳转路由带上参数 this.$router.push({ name: "xxx", params: {id: 88} }); 
-			第三步：this.$route.params.id 拿到传过来的参数  
 			*/ 
+
+			// 获取传递过来的参数，注意是 route  不是 router
+			// this.$route.params
+			// this.$route.query
 		}
 		,reverseMsg: function () {
 			this.msg = this.msg.split('').reverse().join('')
