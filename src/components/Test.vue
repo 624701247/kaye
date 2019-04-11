@@ -44,7 +44,7 @@ export default {
 			}); 
 			console.log('历史页数量', window.history.length)		
 		 	//使用 this.$router 就可以不 import router 了。
-	 		// this.$router.go(-1) //返回上一页
+	 		// this.$router.go(-1) //返回上一页。没什么特别，也是重新渲染上一页，之前的状态并没有保存
 	 		// this.$router.push('/home/22')  跳转页面
 	 		// this.$router.go(0)  // 刷新当前页面
 

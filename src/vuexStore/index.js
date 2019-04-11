@@ -34,8 +34,9 @@ export default new Vuex.Store({
 	},
 
 	mutations: {
-		increment (state) {
-			state.count++
+		// 设置值，通过 this.$store.commit('increment', 5) 访问
+		increment (state, val) {
+			state.count += val
 		}
 	}
 })

@@ -81,3 +81,9 @@
 </script>
 
 
+<!-- 
+
+this.$set(this.sxxAnlist, jj===ind)	
+
+ -->
+
