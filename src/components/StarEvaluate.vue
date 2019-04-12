@@ -27,13 +27,17 @@ Add "scoped" attribute to limit CSS to this component only
 -->
 
 
+<!-- kone point : 组件的知识放这里 
+
+如何获取父节点传递过来的  v-model 值？ 答： 无解！
+
+-->
 <template>
 	<div class="cont">
 		{{count}}
 		<button @click="ontapEvaluate">++</button>
 	</div>
 </template>
-
 
 <script>
 	export default {
@@ -42,6 +46,10 @@ Add "scoped" attribute to limit CSS to this component only
 			return {
 				count:1
 			}
+		},
+		created() {
+			console.log(this)
+			console.log('aaa', this.value, this.$value)
 		},
 		methods: {
 			ontapEvaluate () {

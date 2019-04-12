@@ -76,7 +76,7 @@ export default {
 
 	//kone point:  注册局部组件。 <Hint> 将只在父模板可用
 	// components: { // 写法 1
-	// 	'Hint': Hint
+	// 	'hint': Hint
 	// }
 	components: {  //写法 2  更简洁的写法
 		Hint

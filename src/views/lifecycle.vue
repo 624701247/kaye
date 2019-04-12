@@ -16,7 +16,7 @@
 
 <script>
 	import StarEvaluate from '@/components/StarEvaluate'
-
+	import { mapGetters } from 'vuex'
 
 	export default {
 		name: 'lifecycle',
@@ -25,9 +25,7 @@
 			return {
 				a:2,
 				count: this.$store.state.count,
-				dCount: this.$store.getters.dCount,
-
-				starCount: ''
+				starCount: '99'
 			}
 		},
 
@@ -69,7 +67,12 @@
 				set: function (v) {
 					this.a = v - 1
 				}
-			}
+			},
+
+			//从 vuexStore中拷贝公用数据
+			...mapGetters({
+				dCount: 'dCount'
+			})
 		},
 
 		watch: {
