@@ -24,7 +24,7 @@
 		data () {
 			return {
 				a:2,
-				count: this.$store.state.count,
+				count: this.$store.state.count, //单次辅值，后面state的值改变不会传导过来
 				starCount: '99'
 			}
 		},
@@ -69,7 +69,8 @@
 				}
 			},
 
-			//从 vuexStore中拷贝公用数据
+			// 从 vuexStore中引用公用数据
+			// vuexStore那边数据变化这边也会跟着刷新
 			...mapGetters({
 				dCount: 'dCount'
 			})
@@ -82,11 +83,3 @@
 		}
 	}
 </script>
-
-
-<!-- 
-
-this.$set(this.sxxAnlist, jj===ind)	
-
- -->
-
