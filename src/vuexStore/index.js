@@ -4,8 +4,24 @@ import Vuex from 'vuex'
 Vue.use(Vuex)
 
 
-/* kone point： vuex 知识点统一写在这里
 
+var moda = {
+	// vuex中的store分模块管理，需要在store的index.js中引入各个模块，
+	// 为了解决不同模块命名冲突的问题，将不同模块的namespaced:true，
+	// 之后在不同页面中引入getter、actions、mutations时，需要加上所属的模块名
+	namespaced: true,
+
+	state: {
+		aa:'abcdefg'
+	}
+}
+
+
+
+
+
+
+/* kone point： vuex 知识点统一写在这里
 
 引用 vuex
 1、npm install vuex -s
@@ -19,7 +35,6 @@ export default new Vuex.Store({
 	// 
 	state: {
     	count: 'storeCount'  // 访问 ： this.$store.state.count
-    	
 	},
 
 	// 
@@ -29,10 +44,14 @@ export default new Vuex.Store({
  		}	
 	},
 
+	// 设置值，通过 this.$store.commit('increment', 5) 访问
 	mutations: {
-		// 设置值，通过 this.$store.commit('increment', 5) 访问
 		increment (state, val) {
 			state.count += val
 		}
+	},
+
+	modules: {
+		moda
 	}
 })
