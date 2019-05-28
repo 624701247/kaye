@@ -83,8 +83,8 @@ module.exports = {
         // Template for index.html
         // 将 __dirname 项目根目录下的index.html 作为 打包的index.html模板
         // kone point: 这里我可以把打包目录加上了时间戳
-        // index: path.resolve(__dirname, '../dist/' + getTimestampForamt() + '/index.html'), 
-        index: path.resolve(__dirname, '../dist/index.html'), 
+        // index: path.resolve(__dirname, '../dist/' + getTimestampForamt() + '/index.html'),
+        index: path.resolve(__dirname, '../dist/index.html'),
 
 
         // Paths
@@ -119,19 +119,3 @@ module.exports = {
 }
 
 // 项目配置的知识点在这里
-
-
-/*
-// kone point ： 将vue两个单位的缩进改成宽度为4的 tab
-本来项目根目录下有如下配置文件  .editorconfig  。实在搞不懂怎么设置，我直接删除了，搞定！tab设置变回按照ide的设置为准了。
-root = true
-
-[*]
-charset = utf-8
-indent_style = space
-indent_size = 2
-end_of_line = lf
-insert_final_newline = true
-trim_trailing_whitespace = true
-
-*/

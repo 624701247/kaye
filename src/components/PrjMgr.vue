@@ -5,7 +5,7 @@
     <div class="pn-tools">
         <ul>
             <!-- kone point: for 循环多个标签 -->
-            <!--<li v-for="var idx = 0; idx < tools.length; idx++">    不能这样写哦 -->  
+            <!--<li v-for="var idx = 0; idx < tools.length; idx++">    不能这样写哦 -->
             <!--<li v-for="tool in tools">-->
             <li v-for="(val, idx) in tools">
                 <TabBtn :key="idx" v-bind:text="idx + '、' + val" isActive="true" />
@@ -26,35 +26,34 @@
 </template>
 
 <script>
-import Vue from 'vue'
+// import Vue from 'vue'
 import TabBtn from '@/components/TabBtn'
 
 export default {
-    name: 'PrjMgr',
-    data () {
-        return {
-            prjUrl: 'http://www.baidu.com?v=1',
-            // prjUrl: "http://www.runoob.com/w3cnote/flex-grammar.html?v=1",
-            tools: lang.mgrtools
-        }
-    },
-    methods: {
-        ontapRefresh: function() {
-            var time = carry.randomInt(0,10000)
-            var regObj = new RegExp("(v=).+[0-9]*", "g") 
-            this.prjUrl = this.prjUrl.replace(regObj, 'v=' + time)
-
-            //kone point:  vue操作dom 
-            console.log(this.$refs.ifRef.src)
-            // this.$refs.ifr.contentWindow.location.reload(true);
-        }
-    },
-    components: {
-        TabBtn
+  name: 'PrjMgr',
+  data () {
+    return {
+      prjUrl: 'http://www.baidu.com?v=1',
+      // prjUrl: "http://www.runoob.com/w3cnote/flex-grammar.html?v=1",
+      tools: lang.mgrtools
     }
+  },
+  methods: {
+    ontapRefresh: function () {
+      var time = carry.randomInt(0, 10000)
+      var regObj = new RegExp('(v=).+[0-9]*', 'g')
+      this.prjUrl = this.prjUrl.replace(regObj, 'v=' + time)
+
+      // kone point:  vue操作dom
+      console.log(this.$refs.ifRef.src)
+      // this.$refs.ifr.contentWindow.location.reload(true);
+    }
+  },
+  components: {
+    TabBtn
+  }
 }
 </script>
-
 
 <style scoped lang="less" rel="stylesheet/less">
  @import "../css/global.less";
@@ -78,14 +77,14 @@ export default {
             align-items:center;
         }
         li {
-            list-style-type:none; 
+            list-style-type:none;
             float:left;
             height:100%;
             display:flex;
             align-items:center;
         }
     }
-    
+
     .bd {
     }
 

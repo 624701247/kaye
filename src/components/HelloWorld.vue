@@ -26,14 +26,14 @@ export default {
       starCount: ''
     }
   },
-  filters: { 
+  filters: {
     /*  kone point : 过滤器
-    如上写法 {{ msg | capitalize }} 作用时将 msg 用 “|” 后面的方法格式化输出  
+    如上写法 {{ msg | capitalize }} 作用时将 msg 用 “|” 后面的方法格式化输出
     注册全局过滤器请看 main.js */
     capitalize: carry.capitalize
   },
   created () {
   },
-  computed : {}
+  computed: {}
 }
 </script>
