@@ -13,7 +13,7 @@ import App from './App'
 import router from './router' // 简写， 相当于  ./router/index.js
 import ToolBar from './components/ToolBar'
 import RuleDlg from '@/components/RuleDlg'
-import './es6syntax'
+// import './es6syntax'
 import * as directives from './advanced/directives'
 
 import store from './vuexStore'
@@ -31,12 +31,10 @@ fundebugVue(fundebug, Vue);
 /* moment: JavaScript 日期处理类库 */
 // 配置的语言
 moment.locale('zh-cn')
-console.log('当前时间：', moment().format()) // 就是读浏览器时间
-console.log(moment().format('MMMM Do YYYY, h:mm:ss a'))
+// console.log('当前时间：', moment().format()) // 就是读浏览器时间
+// console.log(moment().format('MMMM Do YYYY, h:mm:ss a'))
 
 Vue.config.productionTip = false
-
-/**/
 
 Vue.use(Mint)
 
@@ -61,6 +59,14 @@ Object.keys(directives).forEach(name => {
   Vue.directive(name, directives[name])
 })
 
+// for (var key in router.options) {
+//   console.log('item', key)
+// }
+var routes = router.options.routes
+for (var idx in routes) {
+  console.log(routes[idx].name)
+}
+
 /* eslint-disable no-new */
 new Vue({
   el: '#app',
@@ -81,7 +87,7 @@ new Vue({
 })
 
 // kone point : global ：vue 的全局变量，默认是等于 Window
-console.log('global', global)
+// console.log('global', global)
 // node环境变量： development 、 production（在浏览器控制直接输入查看不了的）
 console.log('NODE_ENV : ', process.env.NODE_ENV)
 

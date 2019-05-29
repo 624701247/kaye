@@ -30,7 +30,7 @@ export default {
   created () {
     // 加载加载页面需要的资源
     carry.loadImgByAry(['bg_loading.png', 'logo.png', 'bs_18.jpg'], function (count, totalCount) {
-      console.log(count, totalCount, 'per loading')
+      // console.log(count, totalCount, 'per loading')
       if (count === totalCount) {
         this.visible = true
       }

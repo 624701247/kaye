@@ -1,5 +1,5 @@
 <template>
-	<div id="app">
+  <div id="app">
     <router-view/>
     <RuleDlg v-show="ruleVisible"/>
   </div>
@@ -43,32 +43,31 @@ export default {
   position: relative;
 }
 .page {
-	position: absolute;
-	z-index: @z-page;
-	width:100%;
-	height: 100%;
+  position: absolute;
+  z-index: @z-page;
+  width:100%;
+  height: 100%;
+  background: #666;
+  font-size: 0.5rem;
+  line-height:0.8rem;
 }
-
 .dlg {
-	position: fixed;
-	z-index:@z-dlg;
-	width:100%;
-	height:100%;
-	background: rgba(0,0,0,0.5);
-	display: flex;
+  position: fixed;
+  z-index:@z-dlg;
+  width:100%;
+  height:100%;
+  background: rgba(0,0,0,0.5);
+  display: flex;
 }
-
 .spinner {
 }
-
 .weakhint {
 }
-
 .btn {
-	overflow: hidden;
-	white-space: nowrap;
-	text-overflow: ellipsis;
-	display: block;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  display: block;
 }
 
 </style>
