@@ -10,6 +10,22 @@ const HtmlWebpackPlugin = require('html-webpack-plugin')
 const FriendlyErrorsPlugin = require('friendly-errors-webpack-plugin')
 const portfinder = require('portfinder')
 
+const os = require('os')
+
+const getIpV4 = () => {
+  var ifaces = os.networkInterfaces()
+  var ip = ''
+  for(var dev in ifaces) {
+    ifaces[dev].forEach(function(details) {
+      if(ip === '' && details.family === 'IPv4' && !details.internal) {
+        ip = details.address
+        return;
+      }
+    })
+  }
+  return ip || '127.0.0.1'
+}
+
 const HOST = process.env.HOST
 const PORT = process.env.PORT && Number(process.env.PORT)
 
@@ -82,8 +98,10 @@ module.exports = new Promise((resolve, reject) => {
       // Add FriendlyErrorsPlugin
       devWebpackConfig.plugins.push(new FriendlyErrorsPlugin({
         compilationSuccessInfo: {
-
-          messages: [`Your application is running here: http://${devWebpackConfig.devServer.host}:${port}`],
+          messages: [
+              `local  : http://${devWebpackConfig.devServer.host}:${port}` +
+            `\n  network  : http://${getIpV4()}:${port}`
+          ],
         },
         onErrors: config.dev.notifyOnErrors
         ? utils.createNotifierCallback()

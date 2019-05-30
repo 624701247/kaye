@@ -9,6 +9,7 @@
 <div class="page page-vuex">
   <div>state单次赋值：{{count}}</div>
   <div>mapGetters值绑定：{{gCount}}</div>
+  <div>computed{{gCount2}}</div>
   <button @click="ontapComm">commit</button>
   <button @click="ontapDisp">dispatch</button>
 </div>
@@ -36,7 +37,15 @@ export default {
     //  vuex 那边数据变化这边也会跟着刷新
     ...mapGetters({
       gCount: 'gCount'
-    })
+    }),
+    gCount2: () => {
+      // 试图这样写达不到你想要的效果的，数据不会刷新
+      if (this.$store) {
+        return this.$store.state.count
+      } else {
+        return '-1'
+      }
+    }
   }
 }
 </script>

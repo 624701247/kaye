@@ -13,7 +13,7 @@ import App from './App'
 import router from './router' // 简写， 相当于  ./router/index.js
 import ToolBar from './components/ToolBar'
 import RuleDlg from '@/components/RuleDlg'
-// import './es6syntax'
+import './es6syntax'
 import * as directives from './advanced/directives'
 
 import store from './vuexStore'

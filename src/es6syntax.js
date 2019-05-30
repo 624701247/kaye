@@ -1,34 +1,33 @@
+/* eslint-disable */
 
 /* kone point : es6语法 */
 
-/* 箭头函数： */
-var x = () => '我是箭头函数返回'
-console.log(x())
-/* 相当于
-var x = function() {
-	return '箭头函数返回'
+
+/* 箭头函数： ***********************************************************************/
+var x = () => '箭头back'
+// 相当于
+var x_1 = () => { return '箭头back' }
+// 相当于
+var x_2 = function () {
+  return '箭头back'
 }
-*/
 
 /* 箭头函数更骚操作 */
-var funck = function (pa) {
+var funck = function () {
   return function (pb) {
     console.log('oldFun', pb)
   }
 }
-funck()('kl')
+// funck()('kl')
 // 相当于
-var funcl = (pa) => (pb) => {
+var funck_1 = () => (pb) => {
   console.log('newFun', pb)
 }
-funcl()('kl')
-// 相当于
-var funcm = pa => pb => {
-  console.log('newFun22', pb)
-}
-funcm()('kl')
+// funck_1()('kl')
 
-/* async异步函数，默认返回的是一个 Promise 对象 */
+
+/* async异步函数 **************************************************************************/
+/** 默认返回的是一个 Promise 对象 */
 /* async function() {}  */
 var timeout = async (flag) => {
   if (flag) {
@@ -92,6 +91,26 @@ var baz = {...bar, ...{a: 2, b: 4}}
 console.log(baz) // 打印出： {a: 2, b: 4}  可以很方便的修改对象的部分属性
 console.log(bar) // 打印出： {a: 1, b: 2}
 
-const jinx = {}
 
+const jinx = {}
 export default jinx
+
+
+/* 数组操作 findIndex、map **************************************************************/
+// findIndex 找到列表中项目name值等于指定值的项索引值
+var list = [{name:'aa'}, {name: 'bb'}, {name: 'cc'}]
+var fName = 'bb'
+var idx = list.findIndex((item) => {
+  return item.name == fName
+})
+// console.log('find idx', idx)
+
+// map方法的作用不难理解，“映射”嘛，也就是原数组被“映射”成对应新数组
+var list2 = [{lv:2, name:'aa'}, {lv:3, name:'bb'}]
+var listn = list2.map((item) => {
+  // return {...item, tag: 'inst'} //给数组中没项加上新值
+
+  item.name += '_happy'
+  return item
+})
+console.log('listn', listn)

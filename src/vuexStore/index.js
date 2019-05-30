@@ -14,6 +14,8 @@ import Vuex from 'vuex'
 import user from './modules/userStore'
 Vue.use(Vuex)
 
+// var _count = 2
+
 export default new Vuex.Store({
   // 访问 ： this.$store.state.count
   state: {
@@ -28,6 +30,7 @@ export default new Vuex.Store({
   },
 
   // 设置值，通过 this.$store.commit('addCount', 5) 访问
+  // 推荐写法：提交 mutation 是更改状态的唯一方法，并且这个过程是同步的。
   mutations: {
     addCount (state, val) {
       state.count += val
@@ -35,8 +38,10 @@ export default new Vuex.Store({
   },
 
   // 操作，通过 this.$store.dispatch('initx', {xxx}) 调用
+  // 推荐写法： 异步逻辑都应该封装到 action 里面
   actions: {
     initx ({commit, dispatch, state, getters}, payload) {
+      state.count++
       console.log('state', state.count)
       console.log('getters', getters.gCount)
       // commit('addCount', 1)
