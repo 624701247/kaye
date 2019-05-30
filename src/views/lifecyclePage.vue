@@ -6,10 +6,6 @@
     <div>a: {{a}}</div>
     <div>aDouble: {{aDouble}}</div>
     <div>aPlus: {{aPlus}}</div>
-
-    <div>{{count}}</div>
-    <div>{{dCount}}</div>
-
     <star-evaluate ref="starEv" v-model="starCount"></star-evaluate>
   </div>
 </template>
@@ -22,7 +18,6 @@ export default {
   data () {
     return {
       a: 2,
-      count: this.$store.state.count, // 单次辅值，后面state的值改变不会传导过来
       starCount: '99'
     }
   },
@@ -65,13 +60,7 @@ export default {
       set: function (v) {
         this.a = v - 1
       }
-    },
-
-    // 从 vuexStore中引用公用数据
-    // vuexStore那边数据变化这边也会跟着刷新
-    ...mapGetters({
-      dCount: 'dCount'
-    })
+    }
   },
 
   watch: {

@@ -1,10 +1,9 @@
 
-
-function abc() {
+function abc () {
 
 }
 
-function def() {
+function def () {
 
 }
 
@@ -14,6 +13,6 @@ function def() {
 
 // 写法 2： 推荐写法
 export default {
-    abc, 
-    def
+  abc,
+  def
 }

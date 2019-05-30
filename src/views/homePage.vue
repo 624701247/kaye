@@ -1,5 +1,5 @@
 <template>
-  <div class="page page-home">
+  <div class="page page-home test">
     <div>首页（遍历路由）</div>
     <div class="list" v-for="(item, index) in routes" :key="index">
       <router-link class="lk" :to="item.path">{{item.path}}</router-link>

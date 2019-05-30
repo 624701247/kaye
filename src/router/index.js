@@ -8,6 +8,7 @@ import PrjMgr from '@/components/PrjMgr'
 import homePage from '@/views/homePage'
 // import loadingPage from '@/views/loadingPage'
 import lifecyclePage from '@/views/lifecyclePage'
+import vuexPage from '@/views/vuexPage'
 
 Vue.use(Router)
 
@@ -17,18 +18,24 @@ export default new Router({
     {
       path: '/',
       component: homePage
-    },
-    {
+    }, {
       path: '/loading',
       name: 'loadingPage', // kone point: 路由name字段用于：router.push({ name: "loadingPage"});
       component: () => import('@/views/loadingPage') // 相当于下面的写法
       // component: function() {
       //   return import('@/views/loadingPage')
       // }
-    },
-    {
+    }, {
       path: '/lifecycle',
       component: lifecyclePage
+    }, {
+      path: '/vuex',
+      component: vuexPage
+    },
+    {
+      path: '/prj-mgr',
+      name: 'PrjMgr',
+      component: PrjMgr
     },
     {
       path: '/test',
@@ -45,11 +52,6 @@ export default new Router({
         name: 'HelloWorld',
         component: HelloWorld
       }]
-    },
-    {
-      path: '/prj-mgr',
-      name: 'PrjMgr',
-      component: PrjMgr
     }
   ]
 })
