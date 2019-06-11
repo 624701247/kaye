@@ -15,9 +15,9 @@ const mutations = {
 }
 
 const actions = {
-  getUserInfo ({ commit }) {
-    commit('nickName', 'jinx')
-  }
+  // getUserInfo ({ commit }) {
+  //   commit('nickName', 'jinx')
+  // }
 }
 
 export default {

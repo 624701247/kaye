@@ -14,16 +14,28 @@ const os = require('os')
 
 const getIpV4 = () => {
   var ifaces = os.networkInterfaces()
-  var ip = ''
+  var ipArr = [{
+    dev: 'local',
+    ip: '127.0.0.1'
+  }]
   for(var dev in ifaces) {
     ifaces[dev].forEach(function(details) {
-      if(ip === '' && details.family === 'IPv4' && !details.internal) {
-        ip = details.address
+      if(details.family === 'IPv4' && !details.internal) {
+        ipArr.push({
+            dev: dev,
+            ip: details.address
+        })
         return;
       }
     })
   }
-  return ip || '127.0.0.1'
+  var idx = ipArr.findIndex((item) => {
+    return item.dev === 'WLAN'
+  })
+  if(idx == -1) {
+    idx = ipArr.length - 1
+  }
+  return ipArr[idx].ip
 }
 
 const HOST = process.env.HOST

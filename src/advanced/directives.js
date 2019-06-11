@@ -19,3 +19,19 @@ export const focus = {
   // 只调用一次，指令与元素解绑时调用。
   unbind: function () {}
 }
+
+/**  限定只能输入11位数字
+ *  kone point :  vue 统一处理， input 只允许 11位， 纯数字
+*/
+export const tel = {
+  bind: function (el) {
+    el.setAttribute('maxlength', '11')
+    el.setAttribute('type', 'tel')
+  },
+  update: function (el) {
+    el.value = el.value.replace(/[^\d]/g, '')
+    // if (el.value.length > 11) {
+    //   el.value = el.value.slice(0, 11)
+    // }
+  }
+}

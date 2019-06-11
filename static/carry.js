@@ -24,7 +24,7 @@ var carry = {}
   utils.isWx = checkIsWx()
   utils.isIos = checkIsiOS()
 
-  var getUrlParam = function (url) {
+  utils.getUrlParam = function (url) {
     var get = {}
     url = url || window.location.href.toString()
     var q = url.split('?')[1]
@@ -38,16 +38,12 @@ var carry = {}
     }
     return get
   }
-  utils.urlParam = getUrlParam()
 
   utils.randomInt = function (min, max) {
     var r = Math.random() //  Math.random() 返回0 -- 1的开区间，即 0 < x < 1
     r = Math.ceil(r * (max - (min - 1)))
     return (r + (min - 1))
   }
-
-  utils.isDemo = (window.location.host == 'demo.h5.aiwanpai.com')
-  utils.isLocal = (window.location.host.indexOf('aiwanpai') == -1)
 
   var el_clog = null
   utils.clog = function (txt) {
@@ -74,9 +70,14 @@ var carry = {}
     return value.charAt(0).toUpperCase() + value.slice(1)
   }
 
-  // 检查字符串中是否还有中文
+  // 检查字符串中是否含有中文
   utils.checkHasCH = function (str) {
     return /[\u4E00-\u9FA5]/.test(str)
+  }
+
+  // 检查字符串中是否含有emoji表情
+  utils.checkHasEmoji = function (str) {
+    return /[\uD800-\uDFFF]/.test(str)
   }
 }(carry))
 

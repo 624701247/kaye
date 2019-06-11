@@ -39,15 +39,17 @@ module.exports = {
     // kone point:  别名配置,指定字符串代表指定路径
     alias: {
       'vue$': 'vue/dist/vue.esm.js',
+
+      // eg： '@/components/xxx'
       '@': resolve('src'),
 
-      /*比如加上这个你就可以项目中任何层级目录下：background: url('~src/assets/bg_loading.png');  */
-      'src': path.resolve(__dirname, '../src'),  
+      // 比如加上这个你就可以项目中任何层级目录下：background: url('~src/assets/bg_loading.png');
+      'src': path.resolve(__dirname, '../src'),
     }
   },
   module: {
     rules: [
-      ...(config.dev.useEslint ? [createLintingRule()] : []),  
+      ...(config.dev.useEslint ? [createLintingRule()] : []),
 
       {
         test: /\.vue$/,
@@ -75,7 +77,7 @@ module.exports = {
             [name] : 资源名
             [ext] ： 资源文件类型后缀，比如： png 、 jpg
             [hash:7] ： 哈希值 7 应该是表示7位
-            [path] : 
+            [path] :
            */
           name: function(file) {
             // file :  资源的绝对路径，没有带上你在代码中写的 ?xxx

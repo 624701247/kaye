@@ -114,3 +114,7 @@ var listn = list2.map((item) => {
   return item
 })
 console.log('listn', listn)
+
+
+/* Object.keys(obj) 方法会返回一个由给定对象的自身可枚举属性组成的数组 ***********************************************/
+console.log( Object.keys({a:1,b:2}) ) // 打印出 ['a', 'b']

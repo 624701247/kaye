@@ -1,10 +1,8 @@
 # kone point ： .editorconfig 代码规范配置文件
 # 首先需要你的ide安装上相应的插件，比如vscode的对应插件是 EditorConfig for VS Code
 # 然后项目根目录带上此份配置
-
 root = true
-# [*]
-[*.{js,jsx,ts,tsx,vue}]
+[*]
 indent_style = space
 indent_size = 2
 trim_trailing_whitespace = true

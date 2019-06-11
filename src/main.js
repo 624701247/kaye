@@ -13,13 +13,13 @@ import App from './App'
 import router from './router' // 简写， 相当于  ./router/index.js
 import ToolBar from './components/ToolBar'
 import RuleDlg from '@/components/RuleDlg'
-import './es6syntax'
+// import './es6syntax'
 import * as directives from './advanced/directives'
-
 import store from './vuexStore'
 
 import moment from 'moment'
 import Mint from 'mint-ui'
+// import config from '@/config'
 
 /*  fundebug : bug监控平台，很叼哦~   https://www.fundebug.com/
 import * as fundebug from "fundebug-javascript";
@@ -53,19 +53,16 @@ Vue.component('App', App)
 Vue.filter('g_capitalize', carry.capitalize)
 
 /* kone point : 注册全局指令
-使用： <input v-focus="{bgClr:'red'}" />
+使用eg： <input v-focus="{bgClr:'red'}" />
 */
 Object.keys(directives).forEach(name => {
   Vue.directive(name, directives[name])
 })
 
-// for (var key in router.options) {
-//   console.log('item', key)
-// }
-var routes = router.options.routes
-for (var idx in routes) {
-  console.log(routes[idx].name)
-}
+// kone point : global ：vue 的全局变量，默认是等于 Window
+let env = process.env.NODE_ENV
+global.isLocal = !(env === 'production')
+global.isDemo = (window.location.host.indexOf('aiwanpai') === -1)
 
 /* eslint-disable no-new */
 new Vue({
@@ -85,11 +82,6 @@ new Vue({
     }
   }
 })
-
-// kone point : global ：vue 的全局变量，默认是等于 Window
-// console.log('global', global)
-// node环境变量： development 、 production（在浏览器控制直接输入查看不了的）
-console.log('NODE_ENV : ', process.env.NODE_ENV)
 
 /* kone point : 总览
   ###  多个视图依赖于同一状态

@@ -9,6 +9,7 @@ import homePage from '@/views/homePage'
 // import loadingPage from '@/views/loadingPage'
 import lifecyclePage from '@/views/lifecyclePage'
 import vuexPage from '@/views/vuexPage'
+import axiosPage from '@/views/axiosPage'
 
 Vue.use(Router)
 
@@ -31,6 +32,9 @@ export default new Router({
     }, {
       path: '/vuex',
       component: vuexPage
+    }, {
+      path: '/axios',
+      component: axiosPage
     },
     {
       path: '/prj-mgr',
