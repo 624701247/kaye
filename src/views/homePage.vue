@@ -1,5 +1,5 @@
 <template>
-  <div class="page page-home">
+  <div class="page-home">
     <h5>首页（遍历路由）</h5>
 
     <!-- kone point: v-for 循环指令 -->
@@ -12,11 +12,14 @@
       </div>
     </div>
 
+    <div class="btn btn-rule" @click="tapRule">查看规则</div>
+
   </div>
 </template>
 
 <script>
 import router from '../router'
+import {rule} from '@/dlgMgr'
 
 export default {
   data () {
@@ -24,19 +27,25 @@ export default {
       routes: router.options.routes
     }
   },
-  created () {
+  methods: {
+    tapRule () {
+      rule.show('传过去的描述')
+    }
   }
 }
 </script>
 
 <style scoped lang="less" rel="stylesheet/less">
-.list {
-  padding: 0.2rem;
-  text-align: left;
-}
-.lk {
-  &-child {
-    margin-left : 0.2rem;
+  .list {
+    padding: 0.2rem;
+    text-align: left;
   }
-}
+  .lk {
+    &-child {
+      margin-left : 0.2rem;
+    }
+  }
+  .btn-rule {
+    margin: auto;
+  }
 </style>

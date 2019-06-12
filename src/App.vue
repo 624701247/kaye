@@ -1,17 +1,20 @@
 <template>
   <div id="app">
-    <router-view/>
-    <RuleDlg v-show="ruleVisible"/>
+    <router-view class="page"/>
+
+    <div class="dlgs">
+      <ruleDlg />
+    </div>
   </div>
 </template>
+
 <script>
-import store from './store'
+import ruleDlg from '@/components/ruleDlg'
+
 export default {
   name: 'App',
-  data: function () {
-    return store.appState
-  },
-  methods: {
+  components: {
+    ruleDlg
   }
 }
 </script>
@@ -19,55 +22,17 @@ export default {
 <style src="mint-ui/lib/style.css"></style>
 
 <style>
-  /* 修改 mint-ui  菊花z-index */
+  /* kone point : mint-ui Indicator菊花debug*/
   .mint-indicator-wrapper {
+    /* 使用其实不会被其他标签遮挡 */
     z-index: 10;
+    /* 其子标签是 display: inline-block; 会有上下间隙的问题，这里消除该间隙用 */
+    font-size: 0;
   }
 </style>
 
-<style scoped lang="less" rel="stylesheet/less">
-  @import "css/global.less";
-  #app {
-    font-family: 'Avenir', Helvetica, Arial, sans-serif;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    text-align: center;
-    color: #2c3e50;
-    width:100%;
-    height: 100%;
-    position: absolute;
-    left: 0;
-    right: 0;
-    margin: auto;
-    background: #8204b5;
-    position: relative;
-  }
-  .page {
-    position: absolute;
-    z-index: @z-page;
-    width:100%;
-    height: 100%;
-    background: #fff;
-    font-size: 0.5rem;
-    line-height:0.8rem;
-  }
-  .dlg {
-    position: fixed;
-    z-index:@z-dlg;
-    width:100%;
-    height:100%;
-    background: rgba(0,0,0,0.5);
-    display: flex;
-  }
-  .spinner {
-  }
-  .weakhint {
-  }
-  .btn {
-    overflow: hidden;
-    white-space: nowrap;
-    text-overflow: ellipsis;
-    display: block;
-  }
+<style lang="less" rel="stylesheet/less">
+  // kone point : style标签带上scoped则该份样式会带上哈希值，即该份样式不会影响到其他vue文件中的样式
+  @import "css/main"; //引入外部less
 
 </style>

@@ -1,5 +1,5 @@
 <template>
-<div class="page page-loading" v-show="visible">
+<div class="page-loading" v-show="visible">
   <img src="../assets/logo.png" />
   <img v-bind:src="bs18Url" />
   <img src="../assets/bg_loading.png" style="width:1rem;height:1rem;" />

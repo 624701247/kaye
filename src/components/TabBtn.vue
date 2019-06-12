@@ -6,27 +6,24 @@
 </template>
 
 <script>
-import Vue from 'vue'
 
 export default {
-    name: 'TabBtn',
-    // props: [ 'text', 'isActive' ],  //kone point: 传递参数给组件
-    props: {   // kone point : vue 代码规范
-        text: String, 
-        isActive: String
-    },
-    data () {
-        return {  
-        }
-    },
-    methods: {
-    },
-    components: {
+  name: 'TabBtn',
+  // props: [ 'text', 'isActive' ],  //kone point: 传递参数给组件
+  props: { // kone point : vue 代码规范
+    text: String,
+    isActive: String
+  },
+  data () {
+    return {
     }
+  },
+  methods: {
+  },
+  components: {
+  }
 }
 </script>
-
-
 
 <style scoped lang="less" rel="stylesheet/less">
 @import "../css/global.less";
@@ -40,6 +37,6 @@ export default {
     color: white;
 }
 .tabBtn-active {
-    background: #CC7229;    
+    background: #CC7229;
 }
 </style>

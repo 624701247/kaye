@@ -1,12 +1,11 @@
 <template>
-<div class="page page-test">
+<div class="page-test">
   <router-view style="position: absolute; width: 100%; height:100%; background: #fff;"></router-view>
 
   {{msg}}
   <button v-on:click="reverseMsg">逆转消息</button>
 
   <button v-on:click="goHelloPage">跳转路由</button>
-  <Hint></Hint>
 
   <div style="width:2rem; height:1.5rem; background:red; ">
     <button style="width:100%; height:100%; background:rgba(13,13,13,.2); margin:0; padding:0;border:0;" >1</button>
@@ -21,7 +20,6 @@
 <script>
 // import Vue from 'vue'
 import router from '@/router'
-import Hint from '@/components/Hint'
 
 export default {
   data () {
@@ -63,15 +61,8 @@ export default {
     },
     onClickGetPrjList: function () {
     }
-  },
-
-  // kone point:  注册局部组件。 <Hint> 将只在父模板可用
-  // components: { // 写法 1
-  //  'hint': Hint
-  // }
-  components: { // 写法 2  更简洁的写法
-    Hint
   }
+
 }
 </script>
 

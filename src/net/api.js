@@ -30,7 +30,10 @@ api.interceptors.request.use(function (config = {}) {
   }
 
   if (config.needIndicator) {
-    Indicator.open()
+    Indicator.open({
+      text: '加载中...'
+      // spinnerType: 'fading-circle'
+    })
   }
 
   config.params = Object.assign(config.params || {}, getBaseParam())

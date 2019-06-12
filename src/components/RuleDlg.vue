@@ -1,53 +1,30 @@
 <template>
-<div class="dlg dlg-rule" @click="ontapMask">
-
-  <!-- kone point:
-
-  v-on: 绑定事件， 简写 @ 。  例如： v-on:click 或者 @click
-
-  @click.stop ： 表示阻止该点击事件往下层传播
-  @click.native ： 组件绑定原声事件
-
-  v-bind: 绑定属性，简写 : 。 例如 v-bind:class="{'cls1':true}" 或者 :class="{'cls1':true}"
-
-    -->
-  <section class="content" :class="{'content-active':true}" @click.stop="ontapContent">
-
-  </section>
-</div>
+  <dlgFrame :visible="visible" :tapMask="tapMask" :tapContent="tapContent ">
+    <div>规则</div>
+    <div>{{desc}}</div>
+  </dlgFrame>
 </template>
 
 <script>
-// import Vue from 'vue'
-// import router from '@/router'
-import store from '../store'
+import dlgFrame from './dlgFrame'
+import {rule} from '@/dlgMgr'
 
 export default {
-  name: 'RuleDlg',
   data () {
-    return {
-    }
+    return rule.data
+  },
+
+  // kone point:  注册局部组件
+  components: {
+    dlgFrame
+    // 'dlg-frame': dlgFrame  或者这样，给它取个别名
   },
   methods: {
-    ontapMask: function () {
-      console.log('tap mask')
-      store.hideRuleDlg()
+    tapMask: function () {
+      rule.hide()
     },
-    ontapContent: function () {
-      console.log('tap content')
+    tapContent: function () {
     }
   }
 }
 </script>
-
-<style scoped lang="less" rel="stylesheet/less">
-.dlg-rule {
-  .content {
-    width: 6rem;
-    height: 6rem;
-    background: #ffffff;
-    margin: auto;
-    border-radius: 0.2rem;
-  }
-}
-</style>

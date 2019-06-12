@@ -1,7 +1,9 @@
 /* kone point： vuex 知识点统一写在这里
 
 多个视图依赖于同一状态,来自不同视图的行为需要变更同一状态。
-  解决以上两点需求 方案 a : Vuex 、  方案 b : store模式(详细请看 store.js)
+  解决以上两点需求
+    方案 a : Vuex 、
+    方案 b : 详细请看 dlgMgr.js
 
 引用 vuex
 1、npm install vuex -s

@@ -11,8 +11,6 @@ import Vue from 'vue'
 //   kone point : @/xx 表示根路径下xx目录； ./xx 表示当前路径下xx目录
 import App from './App'
 import router from './router' // 简写， 相当于  ./router/index.js
-import ToolBar from './components/ToolBar'
-import RuleDlg from '@/components/RuleDlg'
 // import './es6syntax'
 import * as directives from './advanced/directives'
 import store from './vuexStore'
@@ -42,8 +40,6 @@ Vue.use(Mint)
 Vue.component('runoob', {
   template: '<h1>自定义组件!</h1>'
 }) */
-Vue.component(ToolBar.name, ToolBar)
-Vue.component('RuleDlg', RuleDlg)
 Vue.component('App', App)
 
 // 声明外部变量 不然eslint规范会报错
@@ -91,11 +87,11 @@ new Vue({
 
   ### 指令
   绑定属性   v-bind:text、v-bind:src、v-bind:show   缩写    :src
-  绑定事件   v-on:click  缩写@click
 
   ### 单向数据流
   数据从父级组件传递给子组件，只能单向绑定。
   子组件内部不能直接修改从父级传递过来的数据。
+
   子组件如何给父组件传递参数??
 
   ### 文件目录命名规范

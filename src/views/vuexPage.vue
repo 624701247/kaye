@@ -6,7 +6,7 @@
 </style>
 
 <template>
-<div class="page page-vuex">
+<div class="page-vuex">
   <div>state单次赋值：{{count}}</div>
   <div>mapGetters值绑定：{{gCount}}</div>
   <div>computed{{gCount2}}</div>
