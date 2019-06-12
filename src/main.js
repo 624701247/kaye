@@ -84,21 +84,6 @@ new Vue({
 })
 
 /* kone point : 总览
-  ###  多个视图依赖于同一状态
-  来自不同视图的行为需要变更同一状态。
-  解决以上两点需求 方案 a : Vuex 、  方案 b : store模式(详细请看 store.js)
-
-  ### 用 vue-cli 搭建 vue项目
-  A:
-  1. npm install -g vue-cli
-  2. 创建vue项目： vue init webpack vuetest  （会有各种配置选项让你录入）
-
-  B: 从指定模板中创建项目：
-  从本地模板拷贝创建项目，  ./表示当前路径，模板必须放在指定路径下的“template”文件夹内
-  vue init ./xx kaye-copy
-  同理，git账号名/模板所在git链接，如果不成功试试 ping github.com 看网络通不通
-  vue init kone/https://github.com/624701247/kaye.git kaye-copy
-
   ### 预加载资源的方案
   1. 请看publish.py，
   2. 请看 build 目录下的 pyBuildConf.js 和 webpack.base.conf.js
@@ -107,11 +92,17 @@ new Vue({
   ### 指令
   绑定属性   v-bind:text、v-bind:src、v-bind:show   缩写    :src
   绑定事件   v-on:click  缩写@click
-  循环  v-for
 
   ### 单向数据流
   数据从父级组件传递给子组件，只能单向绑定。
   子组件内部不能直接修改从父级传递过来的数据。
   子组件如何给父组件传递参数??
+
+  ### 文件目录命名规范
+  页面ui 放在 views 目录下，命名 xxxPage.vue
+  组件放在 components 目录下， 指定模块才用到的组件也可以放在 views/xxmod/components
+  vuex数据模块统一放到一个目录里， 命名 xxxStore.js
+  网络通讯api放在 net 目录下，命名 xxxNet.js
+  以上好处，找文件方便咯
 
 */

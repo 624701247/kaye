@@ -1,5 +1,7 @@
-
 /* kone point： vuex 知识点统一写在这里
+
+多个视图依赖于同一状态,来自不同视图的行为需要变更同一状态。
+  解决以上两点需求 方案 a : Vuex 、  方案 b : store模式(详细请看 store.js)
 
 引用 vuex
 1、npm install vuex -s
@@ -7,6 +9,7 @@
 3、import store from './vuexStore' 然后注入到 new Vue 实例里面
 4、搞定，组件、页面通过 this.$store 访问
 mapGetters 辅助函数仅仅是将 store 中的 getter 映射到局部计算属性：
+
 */
 
 import Vue from 'vue'

@@ -46,9 +46,10 @@ module.exports = {
         proxyTable: {},
 
         // Various Dev Server settings
-        //   kone point : 这里修改开发运行的url
-        host: 'localhost', // can be overwritten by process.env.HOST
-        // host: '172.18.11.116',
+
+        // kone point : localhost能访问而ip不能访问的解决方法： host 设置为 '0.0.0.0'
+        host: '0.0.0.0',//'localhost', // can be overwritten by process.env.HOST
+
         port: 2019, // can be overwritten by process.env.PORT, if port is in use, a free one will be determined
 
         autoOpenBrowser: false,

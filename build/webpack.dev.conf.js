@@ -104,6 +104,7 @@ module.exports = new Promise((resolve, reject) => {
     } else {
       // publish the new Port, necessary for e2e tests
       process.env.PORT = port
+
       // add port to devServer config
       devWebpackConfig.devServer.port = port
 
@@ -111,7 +112,7 @@ module.exports = new Promise((resolve, reject) => {
       devWebpackConfig.plugins.push(new FriendlyErrorsPlugin({
         compilationSuccessInfo: {
           messages: [
-              `local  : http://${devWebpackConfig.devServer.host}:${port}` +
+                  `local  : http://${devWebpackConfig.devServer.host}:${port}` +
             `\n  network  : http://${getIpV4()}:${port}`
           ],
         },

@@ -12,7 +12,7 @@
 
 <script>
 import StarEvaluate from '@/components/StarEvaluate'
-import { mapGetters } from 'vuex'
+// import { mapGetters } from 'vuex'
 
 export default {
   data () {
@@ -43,6 +43,7 @@ export default {
   // 如果 root 实例挂载了一个文档内元素，当 mounted 被调用时 vm.$el 也在文档内。
   mounted () {
     // 此回调函数后才能访问标签dom
+    // kone point: vue操作dom this.$refs.xxx
     console.log('mounted starEv', this.$refs.starEv)
   },
 

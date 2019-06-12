@@ -17,12 +17,13 @@ h1, h2 {
 </template>
 
 <script>
+/* global carry */
 
 export default {
   name: 'HelloWorld',
   data () {
     return {
-      msg: 'helloWorld.vue',
+      msg: 'helloWorld',
       starCount: ''
     }
   },

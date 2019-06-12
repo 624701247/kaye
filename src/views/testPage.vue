@@ -1,6 +1,6 @@
 <template>
 <div class="page page-test">
-  <router-view id="testRouer" style="position: absolute; width: 100%; height:100%; background: #fff;"></router-view>
+  <router-view style="position: absolute; width: 100%; height:100%; background: #fff;"></router-view>
 
   {{msg}}
   <button v-on:click="reverseMsg">逆转消息</button>
@@ -24,7 +24,6 @@ import router from '@/router'
 import Hint from '@/components/Hint'
 
 export default {
-  name: 'Test',
   data () {
     return {
       msg: 'hello kaye!!!'
