@@ -10,34 +10,6 @@ const HtmlWebpackPlugin = require('html-webpack-plugin')
 const FriendlyErrorsPlugin = require('friendly-errors-webpack-plugin')
 const portfinder = require('portfinder')
 
-const os = require('os')
-
-const getIpV4 = () => {
-  var ifaces = os.networkInterfaces()
-  var ipArr = [{
-    dev: 'local',
-    ip: '127.0.0.1'
-  }]
-  for(var dev in ifaces) {
-    ifaces[dev].forEach(function(details) {
-      if(details.family === 'IPv4' && !details.internal) {
-        ipArr.push({
-            dev: dev,
-            ip: details.address
-        })
-        return;
-      }
-    })
-  }
-  var idx = ipArr.findIndex((item) => {
-    return item.dev === 'WLAN'
-  })
-  if(idx == -1) {
-    idx = ipArr.length - 1
-  }
-  return ipArr[idx].ip
-}
-
 const HOST = process.env.HOST
 const PORT = process.env.PORT && Number(process.env.PORT)
 
@@ -112,8 +84,8 @@ module.exports = new Promise((resolve, reject) => {
       devWebpackConfig.plugins.push(new FriendlyErrorsPlugin({
         compilationSuccessInfo: {
           messages: [
-                  `local  : http://${devWebpackConfig.devServer.host}:${port}` +
-            `\n  network  : http://${getIpV4()}:${port}`
+                  `local  : http://${devWebpackConfig.devServer.host}:${port}`
+            // `\n  network  : http://localhost:${port}`
           ],
         },
         onErrors: config.dev.notifyOnErrors

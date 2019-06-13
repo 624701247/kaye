@@ -4,6 +4,33 @@
 
 const path = require('path')
 
+const os = require('os')
+const getIpV4 = () => {
+  var ifaces = os.networkInterfaces()
+  var ipArr = [{
+    dev: 'local',
+    ip: '127.0.0.1'
+  }]
+  for(var dev in ifaces) {
+    ifaces[dev].forEach(function(details) {
+      if(details.family === 'IPv4' && !details.internal) {
+        ipArr.push({
+            dev: dev,
+            ip: details.address
+        })
+        return;
+      }
+    })
+  }
+  var idx = ipArr.findIndex((item) => {
+    return item.dev === 'WLAN'
+  })
+  if(idx == -1) {
+    idx = ipArr.length - 1
+  }
+  return ipArr[idx].ip
+}
+
 var curTimestamp = null
 var getTimestampForamt = function() {
     if(curTimestamp) {
@@ -47,12 +74,12 @@ module.exports = {
 
         // Various Dev Server settings
 
-        // kone point : localhost能访问而ip不能访问的解决方法： host 设置为 '0.0.0.0'
-        host: '0.0.0.0',//'localhost', // can be overwritten by process.env.HOST
+        // kone point : localhost能访问而ip不能访问的解决方法： host 设置为 '0.0.0.0' 或者 本地ipv4（会导致无法通过localhost访问）
+        host: getIpV4(),//'localhost', // can be overwritten by process.env.HOST
 
         port: 2019, // can be overwritten by process.env.PORT, if port is in use, a free one will be determined
 
-        autoOpenBrowser: false,
+        autoOpenBrowser: true, // 成功运行后自动用浏览器打开网页
         errorOverlay: true,
         notifyOnErrors: true,
         poll: false, // https://webpack.js.org/configuration/dev-server/#devserver-watchoptions-
