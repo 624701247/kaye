@@ -12,19 +12,18 @@
 
 <script>
 import StarEvaluate from '@/components/StarEvaluate'
-// import { mapGetters } from 'vuex'
 
 export default {
   data () {
     return {
       a: 2,
-      starCount: '99'
+      starCount: 66
     }
   },
 
   //
   components: {
-    'star-evaluate': StarEvaluate
+    StarEvaluate
   },
 
   // 在实例创建完成后被立即调用

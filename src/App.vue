@@ -3,18 +3,18 @@
     <router-view class="page"/>
 
     <div class="dlgs">
-      <ruleDlg />
+      <rule-dlg />
     </div>
   </div>
 </template>
 
 <script>
-import ruleDlg from '@/components/ruleDlg'
+import RuleDlg from '@/components/RuleDlg'
 
 export default {
   name: 'App',
   components: {
-    ruleDlg
+    RuleDlg
   }
 }
 </script>
@@ -31,8 +31,21 @@ export default {
   }
 </style>
 
+<!--
+kone point : vue style标签、整合less、stylus等！
+
+整合 stylus :
+  npm install stylus --save-dev
+  npm install stylus-loader --save-dev
+  style标签里面 lang="stylus"  搞定！
+
+整合 less : 同理！ less 、less-loader
+
+Add "scoped" attribute to limit CSS to this component only
+style标签带上scoped则该份样式会带上哈希值，即该份样式不会影响到其他vue文件中的样式
+
+-->
 <style lang="less" rel="stylesheet/less">
-  // kone point : style标签带上scoped则该份样式会带上哈希值，即该份样式不会影响到其他vue文件中的样式
   @import "css/main"; //引入外部less
 
 </style>

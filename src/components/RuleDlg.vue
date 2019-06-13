@@ -1,12 +1,12 @@
 <template>
-  <dlgFrame :visible="visible" :tapMask="tapMask" :tapContent="tapContent ">
+  <dlg-frame :visible="visible" :tapMask="tapMask" :tapContent="tapContent ">
     <div>规则</div>
     <div>{{desc}}</div>
-  </dlgFrame>
+  </dlg-frame>
 </template>
 
 <script>
-import dlgFrame from './dlgFrame'
+import DlgFrame from './DlgFrame'
 import {rule} from '@/dlgMgr'
 
 export default {
@@ -16,8 +16,8 @@ export default {
 
   // kone point:  注册局部组件
   components: {
-    dlgFrame
-    // 'dlg-frame': dlgFrame  或者这样，给它取个别名
+    DlgFrame
+    // 'dlg-frame-alias': DlgFrame // 或者这样，给它取个别名
   },
   methods: {
     tapMask: function () {

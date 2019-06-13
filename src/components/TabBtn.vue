@@ -1,16 +1,14 @@
 <template>
-<!--kone point: 动态控制 className 列表 -->
-<button v-bind:class="{ 'btn':true, 'tabBtn':true, 'tabBtn-active': isActive}" >
+  <button :class="{ 'btn':true, 'tabBtn':true, 'tabBtn-active': isActive}" >
     {{text}}
-</button>
+  </button>
 </template>
 
 <script>
 
 export default {
   name: 'TabBtn',
-  // props: [ 'text', 'isActive' ],  //kone point: 传递参数给组件
-  props: { // kone point : vue 代码规范
+  props: {
     text: String,
     isActive: String
   },
@@ -26,8 +24,8 @@ export default {
 </script>
 
 <style scoped lang="less" rel="stylesheet/less">
-@import "../css/global.less";
-.tabBtn {
+  @import "../css/global.less";
+  .tabBtn {
     background: orange;
     border: 0;
     max-width: 1.5rem;
@@ -35,8 +33,8 @@ export default {
     height: 0.5rem;
     font-size: 0.3rem;
     color: white;
-}
-.tabBtn-active {
+  }
+  .tabBtn-active {
     background: #CC7229;
-}
+  }
 </style>

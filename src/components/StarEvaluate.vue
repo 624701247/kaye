@@ -1,66 +1,60 @@
 
-
 <style lang="stylus" scoped>
-	.cont
-		width 3rem
-		height 1rem
-		background red
-		button 
-			width 1rem
-			height 0.5rem
+  .cont
+    width 3rem
+    height 1rem
+    background red
+    button
+      width 1rem
+      height 0.5rem
+</style>
 
-</style>		
-<!-- 
-kone point : vue style标签、整合less、stylus等！
-
-整合 stylus :
-	npm install stylus --save-dev
-	npm install stylus-loader --save-dev
-	style标签里面 lang="stylus"  搞定！
-
-
-整合 less : 同理吧 less 、less-loader
-
-
-Add "scoped" attribute to limit CSS to this component only
-
--->
-
-
-<!-- kone point : 组件的知识放这里 
-
-如何获取父节点传递过来的  v-model 值？ 答： 无解！
-
--->
 <template>
-	<div class="cont">
-		{{count}}
-		<button @click="ontapEvaluate">++</button>
-	</div>
+  <div class="cont">
+    {{count}}
+    <button @click="ontapEvaluate">++</button>
+  </div>
 </template>
 
 <script>
-	export default {
-		// name: 'star-evaluate',
-		data () {
-			return {
-				count:1
-			}
-		},
-		created() {
-			console.log(this)
-			console.log('aaa', this.value, this.$value)
-		},
-		methods: {
-			ontapEvaluate () {
-				this.count++
+/*
+  kone point : v-model 指令相关看这里
 
-				// kone point : 调用者通过 v-model 指令绑定数据来获取该控件的操作值
-				this.$emit('input', this.count + '')
-			}
-		}
-	}
+  <input v-model="searchText">
+  等价于
+  <input v-bind:value="searchText" v-on:input="searchText = $event.target.value">
 
+  如何获取父节点传递过来的  v-model 值？ 答：this.value 就是啊！
+
+  通过 this.$emit('input', xx) 向父节点传递值
+
+  组件里直接修改 this.value 会抛警告：
+  [Vue warn]: Avoid mutating a prop directly since the value will be overwritten whenever the parent component re-renders.
+  Instead, use a data or computed property based on the prop's value. Prop being mutated: "value"
+
+*/
+
+export default {
+  data () {
+    return {
+      count: 0
+    }
+  },
+  props: {
+    value: {
+      type: Number,
+      default: 0
+    }
+  },
+  created () {
+    this.count = this.value
+  },
+  methods: {
+    ontapEvaluate () {
+      this.count++
+
+      this.$emit('input', this.count)
+    }
+  }
+}
 </script>
-
-
