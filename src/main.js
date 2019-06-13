@@ -85,14 +85,9 @@ new Vue({
   2. 请看 build 目录下的 pyBuildConf.js 和 webpack.base.conf.js
   3. 然后打包出来的全局变量 BIN_VER 就会跟样式文件中的 aa.png?xxxx  保持一致
 
-  ### 指令
-  绑定属性   v-bind:text、v-bind:src、v-bind:show   缩写    :src
-
   ### 单向数据流
   数据从父级组件传递给子组件，只能单向绑定。
   子组件内部不能直接修改从父级传递过来的数据。
-
-  子组件如何给父组件传递参数??
 
   ### 文件目录命名规范
   页面ui 放在 views 目录下，命名 xxxPage.vue
