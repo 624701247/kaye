@@ -1,7 +1,8 @@
 export const rule = {
   data: {
     visible: false,
-    desc: '哈哈哈哈哈'
+    desc: '哈哈哈哈哈',
+    ss: false
   },
 
   show (desc) {

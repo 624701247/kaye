@@ -7,12 +7,8 @@ h1, h2 {
 
 <template>
   <div class="hello">
-
     <h1>{{ msg | capitalize }}</h1>
     <h1>{{ msg | g_capitalize }}</h1>   <!-- 使用全局过滤器 -->
-
-    <h2>Essential Links</h2>
-
   </div>
 </template>
 
