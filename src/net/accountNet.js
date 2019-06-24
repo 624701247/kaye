@@ -10,9 +10,9 @@ export default {
         params: {t: 666, mark: 'kone'}, // 链接上参数
         needIndicator: false, // 可以自定义配置
         toastMsg: true
-      }).then(function (data) {
-        console.log('u info', data)
-        store.commit('user/empName', data.name)
+      }).then(function (res) {
+        console.log('u info', res)
+        store.commit('user/empName', res.data.name)
       }).catch(function (error) {
         console.log(error)
       }).finally(() => {

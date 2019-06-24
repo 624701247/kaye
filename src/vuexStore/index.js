@@ -22,6 +22,11 @@ Vue.use(Vuex)
 // var _count = 2
 
 export default new Vuex.Store({
+  // 是否使用严格模式
+  // 在严格模式下，无论何时发生了状态变更且不是由 mutation 函数引起的，将会抛出错误。
+  // 问题是只在运行时才抛错误，代码 this.$store.state.count 这样写依然能编译通过
+  strict: true,
+
   // 访问 ： this.$store.state.count
   state: {
     count: 6

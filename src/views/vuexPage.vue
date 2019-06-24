@@ -8,7 +8,9 @@
 <template>
 <div class="page-vuex">
   <div>state单次赋值：{{count}}</div>
+  <div>mapState值绑定：{{m_count}}</div>
   <div>mapGetters值绑定：{{gCount}}</div>
+  <div>mapGetters值绑定(带namespace参数)：{{empName}}</div>
   <div>computed{{gCount2}}</div>
   <button @click="ontapComm">commit</button>
   <button @click="ontapDisp">dispatch</button>
@@ -16,7 +18,7 @@
 </template>
 
 <script>
-import { mapGetters } from 'vuex'
+import { mapGetters, mapState } from 'vuex'
 
 export default {
   name: 'vuexPage',
@@ -33,10 +35,19 @@ export default {
       this.$store.dispatch('initx', {a: 1})
     }
   },
+  created () {
+  },
   computed: {
     //  vuex 那边数据变化这边也会跟着刷新
     ...mapGetters({
       gCount: 'gCount'
+      // empName: 'user/empName'
+    }),
+    ...mapGetters('user', {
+      empName: 'empName'
+    }),
+    ...mapState({
+      m_count: 'count'
     }),
     gCount2: () => {
       // 试图这样写达不到你想要的效果的，数据不会刷新

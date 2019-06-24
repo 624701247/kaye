@@ -1,5 +1,5 @@
 const state = {
-  nickName: ''
+  empName: 'def-name'
 }
 
 const getters = {
