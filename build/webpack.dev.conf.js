@@ -84,8 +84,7 @@ module.exports = new Promise((resolve, reject) => {
       devWebpackConfig.plugins.push(new FriendlyErrorsPlugin({
         compilationSuccessInfo: {
           messages: [
-                  `local  : http://${devWebpackConfig.devServer.host}:${port}`
-            // `\n  network  : http://localhost:${port}`
+                  `local  : http://${devWebpackConfig.devServer.host}:${port}${config.dev.assetsPublicPath}`
           ],
         },
         onErrors: config.dev.notifyOnErrors

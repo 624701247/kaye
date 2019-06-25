@@ -17,7 +17,7 @@ import testPage from '@/views/testPage'
 
 Vue.use(VueRouter)
 const router = new VueRouter({
-  base: '/',
+  base: process.env.BASE_URL,
   mode: 'history',
   routes: [
     {

@@ -65,11 +65,14 @@ var getTimestampForamt = function() {
     return currentdate;
 }
 
+const env = require('./dev.env')
+let base = env.BASE_URL.replace(/"/g, '')
+
 module.exports = {
     dev: {
         // Paths
         assetsSubDirectory: 'static',
-        assetsPublicPath: '/',
+        assetsPublicPath: base,
         proxyTable: {},
 
         // Various Dev Server settings
@@ -79,10 +82,11 @@ module.exports = {
 
         port: 2019, // can be overwritten by process.env.PORT, if port is in use, a free one will be determined
 
-        autoOpenBrowser: true, // 成功运行后自动用浏览器打开网页
+        autoOpenBrowser: false, // 成功运行后自动用浏览器打开网页
         errorOverlay: true,
         notifyOnErrors: true,
         poll: false, // https://webpack.js.org/configuration/dev-server/#devserver-watchoptions-
+
 
         // Use Eslint Loader?
         // If true, your code will be linted during bundling and
@@ -109,9 +113,11 @@ module.exports = {
 
     build: {
         // Template for index.html
-        // 将 __dirname 项目根目录下的index.html 作为 打包的index.html模板
+
         // kone point: 这里我可以把打包目录加上了时间戳
         // index: path.resolve(__dirname, '../dist/' + getTimestampForamt() + '/index.html'),
+
+        // 将 __dirname 项目根目录下的index.html 作为 打包的index.html模板
         index: path.resolve(__dirname, '../dist/index.html'),
 
 
