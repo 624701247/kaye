@@ -19,6 +19,10 @@ import moment from 'moment'
 import Mint from 'mint-ui'
 // import config from '@/config'
 
+import 'bm-vue-component/dist/style.css'
+import BMComponent from 'bm-vue-component'
+Vue.use(BMComponent)
+
 /*  fundebug : bug监控平台，很叼哦~   https://www.fundebug.com/
 import * as fundebug from "fundebug-javascript";
 import fundebugVue from "fundebug-vue";

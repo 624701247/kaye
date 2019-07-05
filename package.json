@@ -15,6 +15,7 @@
   },
   "dependencies": {
     "axios": "^0.18.0",
+    "bm-vue-component": "git+http://git@192.168.240.26/web/bm-vue-component.git#v1.1.7",
     "fundebug-javascript": "^1.6.0",
     "fundebug-vue": "0.0.1",
     "mint-ui": "^2.2.13",

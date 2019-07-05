@@ -8,6 +8,7 @@ import VueRouter from 'vue-router'
 import homePage from '@/views/homePage'
 // import loadingPage from '@/views/loadingPage'
 import lifecyclePage from '@/views/lifecyclePage'
+import bmPage from '@/views/bmPage'
 import vuexPage from '@/views/vuexPage'
 import axiosPage from '@/views/axiosPage'
 
@@ -39,6 +40,9 @@ const router = new VueRouter({
     }, {
       path: '/lifecycle',
       component: lifecyclePage
+    }, {
+      path: '/bm',
+      component: bmPage
     }, {
       path: '/vuex',
       component: vuexPage
